@@ -1,4 +1,4 @@
-# Mangalam HDPE Pipes -- Product Landing Page
+# Mangalam HDPE Pipes - Product Landing Page
 
 A fully responsive product landing page built using **Vanilla HTML, CSS,
 and JavaScript**. The project replicates a **Figma design** and follows
@@ -10,7 +10,6 @@ including product information, technical specifications, applications,
 manufacturing process, testimonials, downloads, and contact
 interactions.
 
-------------------------------------------------------------------------
 
 # Project Overview
 
@@ -26,7 +25,6 @@ All UI components are built using:
 The layout strictly follows **Figma design specifications**, including
 typography, spacing, colors, and responsive behavior.
 
-------------------------------------------------------------------------
 
 # Tech Stack
 
@@ -37,7 +35,6 @@ typography, spacing, colors, and responsive behavior.
 
 No frameworks or libraries were used.
 
-------------------------------------------------------------------------
 
 # Fonts Used
 
@@ -45,7 +42,6 @@ No frameworks or libraries were used.
 
 **Urbanist** - 600 Semibold - 700 Bold
 
-------------------------------------------------------------------------
 
 # Color System
 
@@ -53,14 +49,13 @@ Defined in `css/variables.css`
 
   Color               Hex
   ------------------- ---------
-  Primary Blue        #2B3990
-  Secondary Text      #111827
-  Neutral Black       #0D0D0D
-  Neutral Gray        #878B94
-  Yellow Background   #FEF3C7
+  Primary Blue        #2B3990 ,
+  Secondary Text      #111827 ,
+  Neutral Black       #0D0D0D ,
+  Neutral Gray        #878B94 ,
+  Yellow Background   #FEF3C7 ,
   Yellow Text         #92400E
 
-------------------------------------------------------------------------
 
 
 
@@ -77,7 +72,6 @@ Defined in `css/variables.css`
 9.  FAQ
 10. Footer
 
-------------------------------------------------------------------------
 
 # Modal Popups
 
@@ -95,14 +89,13 @@ Download Full Technical Datasheet
 
 Fields: - Email - Contact number (optional)
 
-------------------------------------------------------------------------
 
 # Responsiveness
 
   Device    Width
   --------- -----------------
-  Desktop   ≥1200px
-  Tablet    768px -- 1199px
+  Desktop   ≥1200px ,
+  Tablet    768px -- 1199px , 
   Mobile    ≤767px
 
 Each section has its own responsive stylesheet.
@@ -112,7 +105,6 @@ Example:
 hero.css\
 hero.responsive.css
 
-------------------------------------------------------------------------
 
 # Design Guidelines
 
@@ -131,7 +123,6 @@ Key layout rules:
 -   Grid based layouts
 -   Flexbox alignment
 
-------------------------------------------------------------------------
 
 # Accessibility
 
@@ -143,7 +134,6 @@ Accessibility improvements included:
 -   Proper alt tags
 -   Screen reader friendly elements
 
-------------------------------------------------------------------------
 
 # Performance Optimizations
 
@@ -152,7 +142,6 @@ Accessibility improvements included:
 -   Minimal JavaScript
 -   No external UI libraries
 
-------------------------------------------------------------------------
 
 # How to Run the Project
 
@@ -164,7 +153,6 @@ Or use a local server:
 
 VS Code → Live Server
 
-------------------------------------------------------------------------
 
 # Future Improvements
 
