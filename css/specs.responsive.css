@@ -1,0 +1,115 @@
+/* ============================================================
+   SPECS RESPONSIVE — css/specs.responsive.css
+   Mobile overrides only. Base → css/specs.css
+
+   Mobile strategy:
+   • The two-column table CANNOT shrink gracefully below ~600px
+   • Solution: switch to stacked "card" layout per row
+     Each row becomes: [PARAMETER label] then [value below]
+   • Heading shrinks: 48px → 28px
+   • Section padding follows --container-px variable
+============================================================ */
+
+/* ── ≤1200px — reduce section padding slightly ───────── */
+@media (max-width: 1200px) {
+  .specs-section {
+    padding: 80px var(--container-px);
+  }
+}
+
+/* ── ≤1080px — section padding + heading scale ───────── */
+@media (max-width: 1080px) {
+  .specs-section {
+    padding: 80px var(--container-px);
+  }
+
+  .specs-heading__title {
+    font-size: 36px;
+  }
+
+  .specs-heading__sub {
+    font-size: 16px;
+  }
+}
+
+/* ── ≤768px — table switches to stacked rows ─────────── */
+@media (max-width: 768px) {
+
+  .specs-heading__title { font-size: 30px; }
+
+  /* Break the side-by-side columns into stacked rows */
+  .specs-table-wrap {
+    flex-direction: column;
+  }
+
+  /* Hide the original column layout */
+  .specs-col {
+    display: none;
+  }
+
+  /* Show the stacked mobile rows (injected by JS or using a
+     data-attribute approach — see specs.js)               */
+  .specs-table-wrap.is-stacked {
+    display: block;
+  }
+
+  .specs-row-mobile {
+    display: flex;
+    flex-direction: column;
+    background: var(--clr-gray-800);
+    border-bottom: 1px solid var(--clr-gray-700);
+  }
+
+  .specs-row-mobile:last-child {
+    border-bottom: none;
+  }
+
+  .specs-row-mobile__param {
+    padding: 10px 20px 4px;
+    font-size: 12px;
+    font-weight: var(--weight-medium);
+    color: var(--clr-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .specs-row-mobile__value {
+    padding: 0 20px 12px;
+    font-size: 15px;
+    font-weight: var(--weight-regular);
+    color: var(--clr-white);
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Header row stays visible on mobile as a section label */
+  .specs-mobile-header {
+    display: flex;
+    padding: 12px 20px;
+    background: var(--clr-gray-700);
+    font-size: 13px;
+    font-weight: var(--weight-semibold);
+    color: var(--clr-white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--clr-gray-700);
+  }
+}
+
+/* ── ≤480px ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .specs-heading__title { font-size: 26px; }
+  .specs-heading__sub   { font-size: 15px; }
+
+  .specs-download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── ≤360px ───────────────────────────────────────────── */
+@media (max-width: 360px) {
+  .specs-heading__title { font-size: 22px; }
+}

@@ -1,0 +1,103 @@
+/* ============================================================
+   resources.responsive.css — Responsive overrides for Resources & Downloads
+   Breakpoints:
+     xl  : max-width 1280px
+     lg  : max-width 1024px
+     md  : max-width 768px
+     sm  : max-width 480px
+   ============================================================ */
+
+/* ---------- XL: 1280px ---------- */
+@media (max-width: 1280px) {
+  :root {
+    --res-section-padding-x: 60px;
+    --res-section-padding-y: 64px;
+    --res-gap: 48px;
+  }
+
+  .resources-title {
+    font-size: 38px;
+  }
+}
+
+/* ---------- LG: 1024px ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --res-section-padding-x: 40px;
+    --res-section-padding-y: 56px;
+    --res-gap: 40px;
+  }
+
+  .resources-title {
+    font-size: 34px;
+  }
+
+  .resources-subtitle {
+    font-size: 16px;
+  }
+}
+
+/* ---------- MD: 768px ---------- */
+@media (max-width: 768px) {
+  :root {
+    --res-section-padding-x: 24px;
+    --res-section-padding-y: 48px;
+    --res-gap: 32px;
+  }
+
+  .resources-title {
+    font-size: 30px;
+  }
+
+  .resources-subtitle {
+    font-size: 15px;
+  }
+
+  .resource-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .resource-download-btn {
+    align-self: flex-end;
+  }
+}
+
+/* ---------- SM: 480px ---------- */
+@media (max-width: 480px) {
+  :root {
+    --res-section-padding-x: 16px;
+    --res-section-padding-y: 36px;
+    --res-gap: 28px;
+  }
+
+  .resources-title {
+    font-size: 26px;
+    letter-spacing: -0.01em;
+  }
+
+  .resources-subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .resource-item {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .resource-name {
+    font-size: 13px;
+  }
+
+  .resource-download-btn {
+    font-size: 13px;
+  }
+
+  .download-icon {
+    width: 14px;
+    height: 14px;
+  }
+}

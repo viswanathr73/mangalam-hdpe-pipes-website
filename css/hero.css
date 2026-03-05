@@ -1,0 +1,426 @@
+/* ============================================================
+   HERO — css/hero.css
+   Desktop styles only.
+   Responsive overrides → css/hero.responsive.css
+   JavaScript behaviour → js/hero.js
+
+   Figma desktop spec:
+   ┌─────────────────────────────────────────────────────┐
+   │ section bg: #F5F5F5 + radial dot pattern            │
+   │ padding-top: 48px  padding-bottom: 56px             │
+   ├────────────────────┬────────────────────────────────┤
+   │ LEFT col  (48%)    │ RIGHT col (52%)                 │
+   │ ─ main image       │ ─ cert pills row                │
+   │   radius: 12px     │ ─ H1  38px Urbanist bold        │
+   │   height: 340px    │ ─ feature list (circle bullets) │
+   │   zoom on hover    │ ─ price card (white, border)    │
+   │ ─ 5 thumbs, 70×70  │ ─ 2 yellow badges               │
+   │   gap: 10px        │ ─ 2 CTA buttons                 │
+   └────────────────────┴────────────────────────────────┘
+   │ trusted logos strip  (centred, grayscale)           │
+   └─────────────────────────────────────────────────────┘
+============================================================ */
+
+/* ── Section shell ───────────────────────────────────── */
+.hero-section {
+background-image: url("../assets/images/bg-image-main.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────── */
+.hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 28px;  /* space before the two-col grid */
+}
+
+.hero-breadcrumb__link {
+  font-size: var(--text-sm);     /* 13px */
+  color: var(--clr-gray-400);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.hero-breadcrumb__link:hover { color: var(--clr-primary); }
+
+.hero-breadcrumb__sep {
+  display: flex;
+  align-items: center;
+  color: var(--clr-gray-300);
+}
+
+.hero-breadcrumb__current {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--clr-gray-700);
+}
+
+/* ── Two-column grid ─────────────────────────────────── */
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: 48fr 52fr;  /* 48% : 52% — Figma spec */
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* ═══════════════════════════════════════════════════════
+   LEFT COLUMN — Image + Thumbnails
+═══════════════════════════════════════════════════════ */
+
+.hero-left { /* grid item — no extra styles needed */ }
+
+/* ── Main image wrapper ──────────────────────────────── */
+.hero-image-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--clr-gray-200);
+  /* Establishes a local stacking context for the hint */
+  isolation: isolate;
+}
+
+/* Main product image */
+.hero-image-wrap img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  /* Scale up on hover — transform-origin set by JS */
+  transition: transform var(--transition-slow);
+}
+
+/* Zoom on hover — scale driven by transform-origin in JS */
+.hero-image-wrap:hover img {
+  transform: scale(1.06);
+}
+
+/* "Hover to zoom" hint pill */
+.hero-image-wrap__hint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--clr-white);
+  font-size: var(--text-xs);       /* 11px */
+  font-weight: var(--weight-medium);
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+/* Fade hint out on hover so it doesn't cover the zoom */
+.hero-image-wrap:hover .hero-image-wrap__hint {
+  opacity: 0;
+}
+
+/* ── Thumbnail strip ─────────────────────────────────── */
+.hero-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.hero-thumb {
+  /* Reset button */
+  appearance: none;
+  background: var(--clr-white);
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+
+  /* Size — Figma: 70 × 70px */
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.hero-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Slightly dim non-active thumbs */
+  opacity: 0.8;
+  transition: opacity var(--transition-base);
+}
+
+/* Hover */
+.hero-thumb:hover {
+  transform: translateY(-2px);
+  border-color: var(--clr-gray-300);
+}
+.hero-thumb:hover img { opacity: 1; }
+
+/* Active / selected state — toggled by JS */
+.hero-thumb.is-active {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(43, 57, 144, 0.15);
+}
+.hero-thumb.is-active img { opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════
+   RIGHT COLUMN — Product info
+═══════════════════════════════════════════════════════ */
+
+.hero-right {
+  /* Slight top offset so certs align with image top */
+  padding-top: 4px;
+}
+
+/* ── Certification pills row ─────────────────────────── */
+.hero-certs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  /* Figma: white bg, 1px border #E5E7EB, r-6px, h-34px */
+  height: 34px;
+  padding: 0 12px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-gray-200);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xs);
+
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  color: var(--clr-gray-700);
+  white-space: nowrap;
+}
+
+.hero-cert img {
+  width: 20px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.hero-cert svg {
+  flex-shrink: 0;
+}
+
+/* ── Product title ───────────────────────────────────── */
+.hero-title {
+  /* Figma: Urbanist Bold 38px, leading 1.25, color #0D0D0D */
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: var(--weight-bold);
+  line-height: 1.25;
+  color: var(--clr-black);
+  margin-bottom: 22px;
+}
+
+/* ── Feature list ────────────────────────────────────── */
+.hero-features {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.hero-features li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--clr-gray-700);
+  line-height: 1.5;
+}
+
+/* Blue filled circle bullet — Figma: 10×10px, #2B3990 */
+.hero-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--clr-primary);
+  flex-shrink: 0;
+}
+
+/* ── Price card ──────────────────────────────────────── */
+.hero-price-card {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-gray-200);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-xs);
+}
+
+/* "Price Range" micro-label */
+.hero-price-card__label {
+  font-size: 12px;
+  font-weight: var(--weight-regular);
+  color: var(--clr-gray-400);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+/* Rupee price value */
+.hero-price-card__value {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: var(--weight-bold);
+  color: var(--clr-black);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+/* Badge row: Shipping + Returns */
+.hero-price-card__badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+/* Individual yellow badge */
+.hero-price-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  /* Figma: amber bg, dark-amber text */
+  background: var(--clr-warning-bg);
+  color: var(--clr-warning-text);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* "Certifications: …" line */
+.hero-price-card__certs {
+  font-size: var(--text-sm);  /* 13px */
+  color: var(--clr-gray-400);
+  line-height: 1;
+}
+
+/* ── CTA button row ──────────────────────────────────── */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Primary — "Get Custom Quote" */
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  font-size: 14px;
+  font-weight: var(--weight-semibold);
+  font-family: var(--font-body);
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+.hero-btn-primary:hover {
+  background: var(--clr-primary-dark);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-1px);
+}
+.hero-btn-primary:active { transform: scale(0.98); }
+
+/* Secondary — "View Technical Specs ›" */
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--clr-primary);
+  font-size: 14px;
+  font-weight: var(--weight-semibold);
+  font-family: var(--font-body);
+  padding: 11px 22px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--clr-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base);
+}
+.hero-btn-secondary:hover {
+  background: var(--clr-primary-light);
+  transform: translateY(-1px);
+}
+.hero-btn-secondary:active { transform: scale(0.98); }
+
+/* Arrow icon inside secondary button inherits currentColor */
+.hero-btn-secondary svg { flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════════════
+   TRUSTED LOGOS STRIP
+   Figma: label + 6 partner logos, centred, grayscale
+═══════════════════════════════════════════════════════ */
+
+.hero-trusted {
+  margin-top: 56px;
+  text-align: center;
+}
+
+.hero-trusted__label {
+  font-size: var(--text-sm);    /* 13px */
+  color: var(--clr-gray-400);
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+}
+
+.hero-trusted__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.hero-trusted__logos img {
+  height: 28px;
+  width: auto;
+  opacity: 0.55;
+  filter: grayscale(30%);
+  transition:
+    opacity var(--transition-base),
+    filter var(--transition-base);
+}
+
+.hero-trusted__logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}

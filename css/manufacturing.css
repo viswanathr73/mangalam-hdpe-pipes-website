@@ -1,0 +1,251 @@
+/* ============================================================
+   MANUFACTURING PROCESS — css/manufacturing.css
+   "Advanced HDPE Pipe Manufacturing Process"
+   Desktop styles only. Responsive → manufacturing.responsive.css
+   JS → js/manufacturing.js
+
+   Visual spec from screenshots:
+   ┌────────────────────────────────────────────────────────┐
+   │ Section bg: #F5F6F8  padding: 100px  text-align:center │
+   │                                                        │
+   │ H2: 44px Urbanist Bold black  centered  max-w ~640px   │
+   │ Sub: 18px regular gray  centered  max-w ~520px          │
+   │ gap heading→tabs: 48px                                  │
+   │                                                        │
+   │ STEP TABS (horizontal scroll pill row)                 │
+   │  each tab: pill shape r-full  px-16px py-8px           │
+   │  inactive: bg transparent  text #6B7280  no border     │
+   │  active:   bg #2B3990       text white                  │
+   │  font: 14px medium                                     │
+   │  gap: 8px between tabs                                 │
+   │  container: bg white  border 1px #E1E3E8  r-12px       │
+   │             px-8px py-8px  inline-flex                 │
+   │                                                        │
+   │ CONTENT CARD                                           │
+   │  bg white  border 1px #E1E3E8  r-16px  p-40px          │
+   │  two-col: left 55% text  right 45% image               │
+   │  gap: 48px                                             │
+   │                                                        │
+   │  LEFT:                                                  │
+   │   title: 24px semibold #0D0D0D                         │
+   │   desc:  16px regular  #535A61  mt-12px                │
+   │   bullets: blue circle + 15px medium #374151           │
+   │   bullet gap: 12px                                     │
+   │                                                        │
+   │  RIGHT:                                                 │
+   │   image: r-12px  object-cover  100% h                  │
+   │   prev/next chevron btns: absolute left/right          │
+   │   btn: white bg  border #E1E3E8  r-full  36×36px       │
+   └────────────────────────────────────────────────────────┘
+============================================================ */
+
+/* ── Section ─────────────────────────────────────────── */
+.manufacturing-section {
+  background: #F5F6F8;
+  padding: 100px var(--container-px);
+}
+
+/* ── Inner wrapper ───────────────────────────────────── */
+.mfg-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ── Heading block — centered ────────────────────────── */
+.mfg-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.mfg-heading__title {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: var(--weight-bold);
+  line-height: 1.15;
+  color: #0D0D0D;
+  max-width: 640px;
+}
+
+.mfg-heading__sub {
+  font-size: 18px;
+  font-weight: var(--weight-regular);
+  line-height: 1.6;
+  color: #6B7280;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* ── Tab strip container ─────────────────────────────── */
+/* White pill, border, contains all step tabs in a row */
+.mfg-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--clr-white);
+  border: 1px solid #E1E3E8;
+  border-radius: 12px;
+  padding: 6px;
+  overflow-x: auto;
+  max-width: 100%;
+  scrollbar-width: none;
+}
+.mfg-tabs::-webkit-scrollbar { display: none; }
+
+/* Individual tab button */
+.mfg-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 16px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  font-family: var(--font-body);
+  color: #6B7280;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--transition-base),
+    color      var(--transition-base);
+}
+
+/* Active tab: filled blue */
+.mfg-tab.is-active {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+.mfg-tab:not(.is-active):hover {
+  background: var(--clr-gray-100);
+  color: #374151;
+}
+
+/* ── Content card ────────────────────────────────────── */
+.mfg-card {
+  width: 100%;
+  background: var(--clr-white);
+  border: 1px solid #E1E3E8;
+  border-radius: 16px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* ── Left: text column ───────────────────────────────── */
+.mfg-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mfg-card__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.3;
+  color: #0D0D0D;
+  margin: 0 0 12px;
+}
+
+.mfg-card__desc {
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  line-height: 1.65;
+  color: #535A61;
+  margin: 0 0 24px;
+}
+
+/* Bullet list */
+.mfg-card__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mfg-card__bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Blue filled circle bullet */
+.mfg-card__bullets li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--clr-primary);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* ── Right: image column ─────────────────────────────── */
+.mfg-card__media {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  /* Intrinsic height from image */
+  aspect-ratio: 4 / 3;
+}
+
+.mfg-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Prev / Next overlay buttons on the image */
+.mfg-card__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--clr-white);
+  border: 1px solid #E1E3E8;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition:
+    border-color var(--transition-base),
+    box-shadow   var(--transition-base),
+    transform    var(--transition-base);
+}
+.mfg-card__nav:hover {
+  border-color: var(--clr-primary);
+  box-shadow: 0 2px 8px rgba(43,57,144,0.15);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.mfg-card__nav--prev { left: 10px; }
+.mfg-card__nav--next { right: 10px; }
+
+.mfg-card__nav svg {
+  width: 14px;
+  height: 14px;
+  color: #374151;
+  flex-shrink: 0;
+}

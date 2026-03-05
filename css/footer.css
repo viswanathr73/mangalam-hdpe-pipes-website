@@ -1,0 +1,270 @@
+/* ============================================================
+   footer.css — Desktop styles for Footer Section
+   Brand: Mangalam HDPE Pipes
+   Primary Blue: #2b3990
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --footer-bg: #ffffff;
+  --footer-border: #cfd1d4;
+  --footer-primary: #2b3990;
+  --footer-text-dark: #0d0d0d;
+  --footer-text-body: #535a61;
+  --footer-text-light: #6b7280;
+  --footer-banner-bg: #ffffff;
+  --footer-bottom-bg: #f5f6f7;
+  --footer-font: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --footer-padding-x: 100px;
+  --footer-padding-y: 60px;
+  --footer-gap: 60px;
+  --footer-banner-radius: 20px;
+  --footer-transition: 0.2s ease;
+}
+
+/* ---------- Reset ---------- */
+.footer-section *,
+.footer-section *::before,
+.footer-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+/* ---------- Footer Wrapper ---------- */
+.footer-section {
+  position: relative;
+  background-color: var(--footer-bg);
+  font-family: var(--footer-font);
+  padding: var(--footer-padding-y) var(--footer-padding-x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-gap);
+  overflow: hidden;
+}
+
+/* ---------- Watermark ---------- */
+.footer-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-watermark .watermark-img {
+  width: 1600px;
+  max-width: 100%;
+  height: 614px;
+  object-fit: contain;
+  opacity: 0.08;
+  user-select: none;
+}
+
+/* ---------- Z-index stacking above watermark ---------- */
+.footer-banner,
+.footer-nav-grid,
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Top Banner ---------- */
+.footer-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--footer-banner-bg);
+  border: 1px solid var(--footer-border);
+  border-radius: var(--footer-banner-radius);
+  padding: 32px;
+  gap: 24px;
+}
+
+.footer-banner-logo img {
+  width: 109px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-banner-text p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--footer-text-dark);
+  text-align: right;
+}
+
+.footer-banner-text p strong {
+  font-weight: 700;
+  color: var(--footer-primary);
+}
+
+.footer-banner-text p span {
+  font-weight: 400;
+  color: var(--footer-text-dark);
+}
+
+/* ---------- Nav Grid ---------- */
+.footer-nav-grid {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ---------- Footer Columns ---------- */
+.footer-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.footer-col-contact {
+  gap: 24px;
+}
+
+/* ---------- Column Title ---------- */
+.footer-col-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--footer-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Footer Links ---------- */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-links li a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--footer-text-body);
+  border-radius: 10px;
+  transition: color var(--footer-transition);
+  display: inline-block;
+}
+
+.footer-links li a:hover {
+  color: var(--footer-primary);
+}
+
+/* ---------- Contact List ---------- */
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.contact-icon svg {
+  width: 13px;
+  height: 14px;
+  color: var(--footer-primary);
+  fill: var(--footer-primary);
+}
+
+.footer-contact-list li span:last-child {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--footer-text-body);
+  line-height: 1.5;
+}
+
+/* ---------- Social Icons ---------- */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--footer-primary);
+  transition: background-color var(--footer-transition), color var(--footer-transition), transform var(--footer-transition);
+}
+
+.social-link svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--footer-primary);
+}
+
+.social-link:hover {
+  background-color: var(--footer-primary);
+  transform: translateY(-2px);
+}
+
+.social-link:hover svg {
+  fill: #ffffff;
+}
+
+/* ---------- Footer Bottom Bar ---------- */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--footer-border);
+  gap: 16px;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--footer-text-light);
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-bottom-links a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--footer-text-light);
+  transition: color var(--footer-transition);
+}
+
+.footer-bottom-links a:hover {
+  color: var(--footer-primary);
+}

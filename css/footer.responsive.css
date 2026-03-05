@@ -1,0 +1,199 @@
+/* ============================================================
+   footer.responsive.css — Responsive overrides for Footer Section
+   Breakpoints:
+     xl  : max-width 1280px
+     lg  : max-width 1024px
+     md  : max-width 768px
+     sm  : max-width 480px
+   ============================================================ */
+
+/* ---------- XL: 1280px ---------- */
+@media (max-width: 1280px) {
+  :root {
+    --footer-padding-x: 60px;
+    --footer-padding-y: 50px;
+    --footer-gap: 48px;
+  }
+
+  .footer-banner-text p {
+    font-size: 20px;
+  }
+
+  .footer-watermark .watermark-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ---------- LG: 1024px ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --footer-padding-x: 40px;
+    --footer-padding-y: 48px;
+    --footer-gap: 40px;
+  }
+
+  .footer-nav-grid {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .footer-col {
+    flex: 1 1 calc(50% - 16px);
+    min-width: 180px;
+  }
+
+  .footer-col-contact {
+    flex: 1 1 100%;
+  }
+
+  .footer-banner-text p {
+    font-size: 18px;
+  }
+}
+
+/* ---------- MD: 768px ---------- */
+@media (max-width: 768px) {
+  :root {
+    --footer-padding-x: 24px;
+    --footer-padding-y: 40px;
+    --footer-gap: 32px;
+  }
+
+  /* Banner stacks vertically */
+  .footer-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .footer-banner-logo img {
+    width: 90px;
+    height: auto;
+  }
+
+  .footer-banner-text p {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  /* Nav grid: 2 columns */
+  .footer-nav-grid {
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+
+  .footer-col {
+    flex: 1 1 calc(50% - 14px);
+    min-width: 140px;
+  }
+
+  .footer-col-contact {
+    flex: 1 1 100%;
+  }
+
+  /* Bottom bar stacks */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-bottom-links {
+    gap: 16px;
+  }
+}
+
+/* ---------- SM: 480px ---------- */
+@media (max-width: 480px) {
+  :root {
+    --footer-padding-x: 16px;
+    --footer-padding-y: 32px;
+    --footer-gap: 28px;
+  }
+
+  /* Banner */
+  .footer-banner {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .footer-banner-logo img {
+    width: 80px;
+    height: auto;
+  }
+
+  .footer-banner-text p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* Nav grid: single column */
+  .footer-nav-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-col,
+  .footer-col-contact {
+    flex: 1 1 100%;
+  }
+
+  /* Links spacing */
+  .footer-links {
+    gap: 12px;
+  }
+
+  .footer-links li a {
+    font-size: 13px;
+  }
+
+  /* Contact */
+  .footer-contact-list {
+    gap: 10px;
+  }
+
+  .footer-contact-list li span:last-child {
+    font-size: 12px;
+  }
+
+  /* Column titles */
+  .footer-col-title {
+    font-size: 11px;
+  }
+
+  /* Social icons */
+  .footer-social {
+    gap: 12px;
+  }
+
+  .social-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .social-link svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    gap: 10px;
+  }
+
+  .footer-copyright {
+    font-size: 11px;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 11px;
+  }
+}

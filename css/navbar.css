@@ -1,0 +1,233 @@
+/* ============================================================
+   NAVBAR — css/navbar.css
+   Desktop styles only.
+   Responsive overrides → css/navbar.responsive.css
+   JavaScript behaviour → js/navbar.js
+
+   Figma spec (desktop):
+   • White background, 1px solid border-bottom (#E5E7EB)
+   • Container max 1240px, padding from --container-px
+   • Height: 72px  (logo + nav vertically centred)
+   • Logo: left aligned, 109×45px
+   • Nav links: "About Us" · "Products ▾" — 15px weight-500
+   • Link gap: 32px
+   • CTA: "Contact Us" — filled primary blue, 10px 22px, r-8px
+============================================================ */
+
+/* ── Outer bar ───────────────────────────────────────── */
+.navbar {
+  position: relative;
+  z-index: var(--z-dropdown);
+  width: 100%;
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+}
+
+/* ── Inner wrapper ───────────────────────────────────── */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height-desktop);
+}
+
+/* ── Logo ────────────────────────────────────────────── */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  width: 109px;
+  height: 45px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Right side  (links + CTA) ───────────────────────── */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* ── Nav links ───────────────────────────────────────── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+}
+
+.navbar-links a {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--navbar-link-color);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-base);
+}
+
+.navbar-links a:hover { color: var(--navbar-link-hover); }
+
+/* ── Products dropdown ───────────────────────────────── */
+.navbar-dropdown { position: relative; }
+
+.navbar-dropdown__trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--navbar-link-color);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--transition-base);
+}
+.navbar-dropdown__trigger:hover { color: var(--navbar-link-hover); }
+
+.navbar-dropdown__chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+.navbar-dropdown.is-open .navbar-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.navbar-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: var(--clr-white);
+  border: 1px solid var(--clr-gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  min-width: 190px;
+  z-index: var(--z-dropdown);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.navbar-dropdown:hover  .navbar-dropdown__menu,
+.navbar-dropdown.is-open .navbar-dropdown__menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.navbar-dropdown__menu a {
+  display: block;
+  padding: 9px 14px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--clr-gray-700);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.navbar-dropdown__menu a:hover {
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+}
+
+/* ── CTA button ──────────────────────────────────────── */
+.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  font-size: 14px;
+  font-weight: var(--weight-semibold);
+  font-family: var(--font-body);
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+.navbar-cta:hover {
+  background: var(--clr-primary-dark);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-1px);
+  color: var(--clr-white);
+}
+.navbar-cta:active { transform: scale(0.98); }
+
+/* ── Mobile burger (hidden desktop) ─────────────────── */
+.navbar-mobile-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar-mobile-btn__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--clr-gray-700);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+.navbar-mobile-btn.is-active .navbar-mobile-btn__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar-mobile-btn.is-active .navbar-mobile-btn__bar:nth-child(2) { opacity: 0; }
+.navbar-mobile-btn.is-active .navbar-mobile-btn__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile menu panel (hidden desktop) ─────────────── */
+.navbar-mobile-menu {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid var(--clr-gray-200);
+  padding: var(--space-4) var(--container-px);
+  gap: 0;
+  background: var(--clr-white);
+}
+.navbar-mobile-menu.is-open { display: flex; }
+
+.navbar-mobile-menu a,
+.navbar-mobile-menu button {
+  display: block;
+  padding: 12px 0;
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--clr-gray-700);
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--clr-gray-100);
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.navbar-mobile-menu a:last-child,
+.navbar-mobile-menu button:last-of-type { border-bottom: none; }
+.navbar-mobile-menu a:hover,
+.navbar-mobile-menu button:hover { color: var(--clr-primary); }
+
+.navbar-mobile-cta {
+  margin-top: var(--space-3);
+  width: 100%;
+  justify-content: center;
+  border-bottom: none !important;
+  padding: 12px 22px !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--clr-primary) !important;
+  color: var(--clr-white) !important;
+}

@@ -1,0 +1,156 @@
+/* ============================================================
+   contact.responsive.css — Responsive overrides for Contact Form Section
+   Breakpoints:
+     xl  : max-width 1280px
+     lg  : max-width 1024px
+     md  : max-width 768px
+     sm  : max-width 480px
+   ============================================================ */
+
+/* ---------- XL: 1280px ---------- */
+@media (max-width: 1280px) {
+  :root {
+    --cf-section-padding-x: 60px;
+    --cf-section-padding-y: 64px;
+    --cf-card-padding: 48px;
+  }
+
+  .contact-card {
+    gap: 80px;
+  }
+
+  .contact-heading {
+    font-size: 40px;
+  }
+
+  .contact-subtext {
+    font-size: 16px;
+  }
+
+  .contact-form-card {
+    width: 380px;
+  }
+}
+
+/* ---------- LG: 1024px ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --cf-section-padding-x: 40px;
+    --cf-section-padding-y: 56px;
+    --cf-card-padding: 40px;
+  }
+
+  .contact-card {
+    gap: 48px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-form-card {
+    width: 100%;
+    max-width: 500px;
+    align-self: center;
+  }
+
+  .contact-heading {
+    font-size: 36px;
+  }
+
+  .contact-subtext {
+    font-size: 16px;
+  }
+}
+
+/* ---------- MD: 768px ---------- */
+@media (max-width: 768px) {
+  :root {
+    --cf-section-padding-x: 24px;
+    --cf-section-padding-y: 48px;
+    --cf-card-padding: 32px;
+    --cf-form-padding: 24px;
+  }
+
+  .contact-card {
+    border-radius: 24px;
+    gap: 36px;
+  }
+
+  .contact-heading {
+    font-size: 30px;
+    letter-spacing: -0.01em;
+  }
+
+  .contact-subtext {
+    font-size: 15px;
+  }
+
+  .contact-assist p {
+    font-size: 13px;
+  }
+
+  .contact-content {
+    gap: 28px;
+  }
+
+  .contact-form-card {
+    max-width: 100%;
+    padding: var(--cf-form-padding);
+    border-radius: 18px;
+  }
+}
+
+/* ---------- SM: 480px ---------- */
+@media (max-width: 480px) {
+  :root {
+    --cf-section-padding-x: 16px;
+    --cf-section-padding-y: 32px;
+    --cf-card-padding: 24px;
+    --cf-form-padding: 20px;
+  }
+
+  .contact-card {
+    border-radius: 20px;
+    gap: 28px;
+  }
+
+  .contact-heading {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  .contact-subtext {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .contact-assist p {
+    font-size: 12px;
+  }
+
+  .contact-text-block {
+    gap: 12px;
+  }
+
+  .contact-content {
+    gap: 20px;
+  }
+
+  .form-fields {
+    gap: 10px;
+  }
+
+  .form-field input,
+  .phone-prefix span,
+  .form-field--phone input {
+    font-size: 13px;
+  }
+
+  .form-submit-btn {
+    font-size: 13px;
+    height: 42px;
+  }
+
+  .form-card-title {
+    font-size: 15px;
+  }
+}

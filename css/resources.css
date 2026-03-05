@@ -1,0 +1,141 @@
+/* ============================================================
+   resources.css — Desktop styles for Resources & Downloads Section
+   Brand: Mangalam HDPE Pipes
+   Primary Blue: #2b3990
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --res-bg: #f5f7fa;
+  --res-card-bg: #ffffff;
+  --res-border: #cfd1d4;
+  --res-primary: #2b3990;
+  --res-primary-hover: #1e2a6e;
+  --res-title-color: #0d0d0d;
+  --res-subtitle-color: #4d545c;
+  --res-name-color: #0d0d0d;
+  --res-download-text: #2b3990;
+  --res-font: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --res-section-padding-x: 100px;
+  --res-section-padding-y: 80px;
+  --res-gap: 56px;
+  --res-card-radius: 10px;
+  --res-transition: 0.2s ease;
+}
+
+/* ---------- Reset ---------- */
+.resources-section *,
+.resources-section *::before,
+.resources-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.resources-section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Section Wrapper ---------- */
+.resources-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--res-gap);
+  padding: var(--res-section-padding-y) var(--res-section-padding-x);
+  background-color: var(--res-bg);
+  font-family: var(--res-font);
+  width: 100%;
+}
+
+/* ---------- Section Header ---------- */
+.resources-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+}
+
+.resources-title {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--res-title-color);
+  letter-spacing: -0.01em;
+}
+
+.resources-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--res-subtitle-color);
+}
+
+/* ---------- Downloads List ---------- */
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ---------- Individual Resource Item ---------- */
+.resource-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: var(--res-card-bg);
+  border: 1px solid var(--res-border);
+  border-radius: var(--res-card-radius);
+  padding: 20px;
+  transition: box-shadow var(--res-transition), border-color var(--res-transition);
+}
+
+.resource-item:hover {
+  border-color: var(--res-primary);
+  box-shadow: 0 2px 12px rgba(43, 57, 144, 0.08);
+}
+
+/* ---------- Resource Name ---------- */
+.resource-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--res-name-color);
+  line-height: 1.4;
+}
+
+/* ---------- Download Button ---------- */
+.resource-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--res-download-text);
+  transition: color var(--res-transition), transform var(--res-transition);
+  white-space: nowrap;
+}
+
+.resource-download-btn:hover {
+  color: var(--res-primary-hover);
+}
+
+.resource-download-btn:hover .download-icon {
+  transform: translateY(2px);
+}
+
+/* ---------- Download Icon ---------- */
+.download-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform var(--res-transition);
+}

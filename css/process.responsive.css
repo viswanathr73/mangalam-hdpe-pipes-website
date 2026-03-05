@@ -1,0 +1,99 @@
+/* ============================================================
+   APPLICATIONS CAROUSEL RESPONSIVE — css/process.responsive.css
+
+   Peek counts per breakpoint:
+   >1080px   card=420px  → 2 full + ~90% peek on each side (4 visible)
+   ≤1080px   card=calc(50%-peek)  → 2 full + 10% peek both sides
+   ≤800px    card=calc(50%-8px)   → 2 full, no peek
+   ≤480px    card=85vw            → 1 full + 15% peek on right
+   ≤360px    card=calc(100%-32px) → 1 full
+============================================================ */
+
+/* ── ≤1200px: slight heading scale ──────────────────── */
+@media (max-width: 1200px) {
+  .process-header__title { font-size: 38px; }
+  .process-card { flex: 0 0 380px; width: 380px; height: 380px; }
+}
+
+/* ── ≤1080px: 2 full + 10% peek on each side ────────── */
+@media (max-width: 1080px) {
+  .process-section {
+    padding-top:    80px;
+    padding-bottom: 80px;
+  }
+  .process-header__title { font-size: 32px; }
+  .process-header__sub   { font-size: 16px; }
+  .process-nav__btn { width: 52px; height: 52px; }
+
+  /*
+    Card width = (viewport - 2×container-px - gap) / 2 - peek
+    At 1080px viewport with 60px padding:
+      available = 1080 - 120 = 960
+      2 cards + gap = 960 - 16 = 944 → each card ~460px
+    But we want 10% peek so card = (viewport * 0.80 - gap) / 2
+    Using CSS calc with vw is most reliable here:
+  */
+  .process-card {
+    flex: 0 0 calc(45vw - 8px);
+    width: calc(45vw - 8px);
+    height: 360px;
+  }
+  .process-card__title { font-size: 22px; }
+  .process-card__content { padding: 24px 20px; }
+}
+
+/* ── ≤800px: exactly 2 full cards, no peek ───────────── */
+@media (max-width: 800px) {
+  .process-section {
+    padding-top:    60px;
+    padding-bottom: 60px;
+  }
+  .process-header { flex-wrap: wrap; gap: 16px; }
+  .process-header__title { font-size: 26px; }
+  .process-header__sub   { font-size: 15px; }
+  .process-nav__btn { width: 44px; height: 44px; }
+  .process-nav__btn svg  { width: 14px; height: 11px; }
+
+  /*
+    2 full cards: each = (container - gap) / 2
+    container at 800px = 800 - 2×48 = 704 (container-px=48)
+    each card = (704 - 16) / 2 = 344px
+    Using vw: (100vw - 96px - 16px) / 2 = calc(50vw - 56px)
+  */
+  .process-card {
+    flex: 0 0 calc(50vw - 56px);
+    width: calc(50vw - 56px);
+    height: 320px;
+  }
+  .process-card__title { font-size: 20px; }
+  .process-card__desc  { font-size: 14px; }
+  .process-card__content { padding: 20px 16px; gap: 8px; }
+}
+
+/* ── ≤480px: 1 card + right peek ────────────────────── */
+@media (max-width: 480px) {
+  .process-header__title { font-size: 22px; }
+
+  /* 85vw wide so 15% of next card peeks right */
+  .process-card {
+    flex: 0 0 80vw;
+    width: 80vw;
+    height: 280px;
+    border-radius: 20px;
+  }
+}
+
+/* ── ≤360px: 1 full card ─────────────────────────────── */
+@media (max-width: 360px) {
+  .process-section { padding-top: 48px; padding-bottom: 48px; }
+  .process-header__title { font-size: 20px; }
+
+  .process-card {
+    flex: 0 0 calc(100vw - 32px);
+    width: calc(100vw - 32px);
+    height: 260px;
+    border-radius: 16px;
+  }
+  .process-carousel  { padding-left: 16px; }
+  .process-nav__btn  { width: 38px; height: 38px; }
+}

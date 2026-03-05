@@ -1,0 +1,112 @@
+/* ============================================================
+   MANUFACTURING PROCESS RESPONSIVE
+   manufacturing.responsive.css
+
+   Mobile spec (Image 2):
+   - "Step X/7: Raw Material" badge above card title
+   - Single column: text → image
+   - Prev/Next as text buttons at card bottom
+   - Image nav btns hidden (replaced by bottom text links)
+   - Tabs strip horizontally scrolls
+============================================================ */
+
+/* ── ≤1080px ─────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .manufacturing-section { padding: 80px var(--container-px); }
+  .mfg-heading__title { font-size: 36px; }
+  .mfg-heading__sub   { font-size: 16px; }
+  .mfg-card { gap: 32px; padding: 32px; }
+}
+
+/* ── ≤800px: stack to single column ─────────────────── */
+@media (max-width: 800px) {
+  .manufacturing-section { padding: 60px var(--container-px); }
+  .mfg-heading__title { font-size: 28px; }
+
+  /* Tabs: allow horizontal scroll on small screens */
+  .mfg-tabs {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  /* Card: single column */
+  .mfg-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  /* Image comes after text on mobile */
+  .mfg-card__text  { order: 1; }
+  .mfg-card__media { order: 2; }
+
+  /* Hide image overlay nav buttons on mobile */
+  .mfg-card__nav { display: none; }
+
+  /* Show step badge (hidden on desktop) */
+  .mfg-step-badge { display: inline-flex; }
+
+  /* Show mobile prev/next nav (hidden on desktop) */
+  .mfg-mobile-nav { display: flex; }
+}
+
+/* ── ≤480px ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .mfg-heading__title  { font-size: 24px; }
+  .mfg-heading__sub    { font-size: 15px; }
+  .mfg-card__title     { font-size: 20px; }
+  .mfg-card__desc      { font-size: 15px; }
+  .mfg-inner           { gap: 32px; }
+}
+
+/* ── ≤360px ──────────────────────────────────────────── */
+@media (max-width: 360px) {
+  .manufacturing-section { padding: 48px var(--container-px); }
+  .mfg-heading__title  { font-size: 22px; }
+  .mfg-card            { padding: 18px; }
+  .mfg-tab             { padding: 6px 12px; font-size: 13px; }
+}
+
+/* ── Step badge — mobile only (hidden desktop) ───────── */
+.mfg-step-badge {
+  display: none;            /* shown at ≤800px via above rule */
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  background: var(--clr-primary-light);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  color: var(--clr-primary);
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+/* ── Mobile prev/next text nav — hidden desktop ──────── */
+.mfg-mobile-nav {
+  display: none;            /* shown at ≤800px */
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.mfg-mobile-nav__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--clr-primary);
+  cursor: pointer;
+  padding: 0;
+  transition: opacity var(--transition-fast);
+}
+.mfg-mobile-nav__btn:disabled {
+  color: var(--clr-gray-400);
+  cursor: not-allowed;
+}
+.mfg-mobile-nav__btn:not(:disabled):hover { opacity: 0.75; }

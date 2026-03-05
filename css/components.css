@@ -1,0 +1,192 @@
+/* ============================================================
+   COMPONENTS — css/components.css
+   Reusable atoms: Buttons · Badges · Pills · Avatars
+   These styles are used across multiple sections.
+============================================================ */
+
+/* ── Buttons ─────────────────────────────────────────── */
+
+/* Base button resets */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-md);
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  line-height: 1;
+}
+.btn:active { transform: scale(0.98); }
+
+/* Size variants */
+.btn--lg  { padding: 14px 28px; font-size: var(--text-base); }
+.btn--md  { padding: 12px 22px; font-size: var(--text-sm); }
+.btn--sm  { padding: 9px 18px;  font-size: var(--text-xs); }
+.btn--full { width: 100%; }
+
+/* Primary — filled blue */
+.btn--primary {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border-color: var(--clr-primary);
+}
+.btn--primary:hover {
+  background: var(--clr-primary-dark);
+  border-color: var(--clr-primary-dark);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-1px);
+}
+
+/* Secondary — outlined blue */
+.btn--secondary {
+  background: transparent;
+  color: var(--clr-primary);
+  border-color: var(--clr-primary);
+}
+.btn--secondary:hover {
+  background: var(--clr-primary-light);
+  transform: translateY(-1px);
+}
+
+/* Ghost — outlined gray */
+.btn--ghost {
+  background: transparent;
+  color: var(--clr-gray-700);
+  border-color: var(--clr-gray-300);
+}
+.btn--ghost:hover {
+  background: var(--clr-gray-100);
+  border-color: var(--clr-gray-400);
+}
+
+/* White — for dark backgrounds */
+.btn--white {
+  background: var(--clr-white);
+  color: var(--clr-primary);
+  border-color: var(--clr-white);
+}
+.btn--white:hover {
+  background: var(--clr-gray-100);
+}
+
+/* ── Badges ──────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+}
+.badge--yellow {
+  background: var(--clr-warning-bg);
+  color: var(--clr-warning-text);
+}
+.badge--blue {
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+}
+.badge--green {
+  background: #DCFCE7;
+  color: #15803D;
+}
+.badge--red {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
+/* ── Stars ───────────────────────────────────────────── */
+.stars {
+  color: #F59E0B;
+  font-size: var(--text-md);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+/* ── Avatar ──────────────────────────────────────────── */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+}
+
+/* ── Icon box ────────────────────────────────────────── */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+.icon-box--sm   { width: 36px; height: 36px; }
+.icon-box--md   { width: 46px; height: 46px; }
+.icon-box--lg   { width: 56px; height: 56px; }
+.icon-box--blue { background: var(--clr-primary-light); }
+.icon-box--dark { background: rgba(43,57,144,0.4); border: 1px solid rgba(43,57,144,0.7); }
+
+/* ── Carousel dots ───────────────────────────────────── */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--clr-gray-300);
+  border: none;
+  padding: 0;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+.carousel-dot.is-active {
+  background: var(--clr-primary);
+  width: 24px;
+}
+
+/* ── Carousel nav buttons ────────────────────────────── */
+.carousel-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--clr-gray-200);
+  background: var(--clr-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+.carousel-nav-btn:hover {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-light);
+}
+.carousel-nav-btn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

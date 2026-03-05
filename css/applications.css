@@ -1,0 +1,153 @@
+/* ============================================================
+   APPLICATIONS (Features) — css/applications.css
+   Desktop styles only. Responsive → applications.responsive.css
+
+   Figma / Tailwind map:
+   bg-white  p-[100px]
+   H2:  44px Urbanist Bold  #0D0D0D
+   Sub: 18px regular        #6A7077
+   gap between heading and grid: gap-14 = 56px
+   grid: 2 rows × 3 cols, gap-6 = 24px between all cards
+   card: bg-white  p-5=20px  rounded-2xl=16px  border #CFD1D4
+         flex-col gap-4=16px
+   icon: w-8 h-8 = 32×32  color #2B3990
+   title: 20px semibold #0D0D0D
+   body:  16px regular  #535A61
+   CTA: bg-[#2b3990]  h-[52px]  px-6=24px  rounded-xl=12px
+============================================================ */
+
+/* ── Section ─────────────────────────────────────────── */
+.applications-section {
+  background: var(--clr-white);
+  padding: 100px var(--container-px);
+}
+
+/* ── Inner wrapper ───────────────────────────────────── */
+.applications-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;                 /* gap-14 */
+}
+
+/* ── Heading block ───────────────────────────────────── */
+.applications-heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;                 /* gap-5 */
+}
+
+.applications-heading__title {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  color: #0D0D0D;
+}
+
+.applications-heading__sub {
+  font-size: 18px;
+  font-weight: var(--weight-regular);
+  line-height: 1.6;
+  color: #6A7077;
+}
+
+/* ── Card grid: flex-col containing two flex rows ────── */
+.applications-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;                 /* gap-6 between rows */
+  width: 100%;
+}
+
+.applications-row {
+  display: flex;
+  gap: 24px;                 /* gap-6 between cards in row */
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.applications-card {
+  flex: 1 1 0;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                 /* gap-4 */
+
+  background: var(--clr-white);
+  border: 1px solid #CFD1D4;
+  border-radius: 16px;       /* rounded-2xl */
+  padding: 20px;             /* p-5 */
+
+  transition:
+    border-color var(--transition-base),
+    box-shadow   var(--transition-base),
+    transform    var(--transition-base);
+}
+
+.applications-card:hover {
+  border-color: var(--clr-primary);
+  box-shadow: 0 4px 20px rgba(43, 57, 144, 0.10);
+  transform: translateY(-3px);
+}
+
+/* ── Icon: 32×32, currentColor = #2B3990 ────────────── */
+.applications-card__icon {
+  width: 32px;
+  height: 32px;
+  color: var(--clr-primary);
+  flex-shrink: 0;
+}
+.applications-card__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Title ───────────────────────────────────────────── */
+.applications-card__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  color: #0D0D0D;
+}
+
+/* ── Body text ───────────────────────────────────────── */
+.applications-card__body {
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  line-height: 1.65;
+  color: #535A61;
+  margin: 0;
+}
+
+/* ── CTA button ──────────────────────────────────────── */
+.applications-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 24px;           /* px-6 */
+  border-radius: 12px;       /* rounded-xl */
+  background: var(--clr-primary);
+  border: none;
+  color: var(--clr-white);
+  font-size: 16px;
+  font-weight: var(--weight-medium);
+  font-family: var(--font-body);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    background  var(--transition-base),
+    box-shadow  var(--transition-base),
+    transform   var(--transition-base);
+}
+.applications-cta:hover {
+  background: var(--clr-primary-dark);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-1px);
+}
+.applications-cta:active { transform: scale(0.98); }

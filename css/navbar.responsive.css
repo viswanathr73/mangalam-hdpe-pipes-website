@@ -1,0 +1,80 @@
+/* ============================================================
+   NAVBAR RESPONSIVE — css/navbar.responsive.css
+   Breakpoints only. Desktop base → css/navbar.css
+
+   Figma mobile spec (360 × 77px):
+   • Logo only — left aligned
+   • Height 77px (we use --navbar-height-mobile: 64px min,
+     padded to match)
+   • Nav links hidden → hamburger menu button appears
+   • Mobile menu drops below bar as full-width panel
+============================================================ */
+
+/* ── ≤1080px — tablet ────────────────────────────────── */
+@media (max-width: 1080px) {
+
+  /* Hide desktop nav links + show burger */
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-mobile-btn {
+    display: flex;
+  }
+}
+
+/* ── ≤800px — large mobile ───────────────────────────── */
+@media (max-width: 800px) {
+
+  /* Slightly reduce navbar height */
+  .navbar-inner {
+    height: var(--navbar-height-mobile);
+  }
+
+  /* Shrink logo slightly on smaller screens */
+  .navbar-logo img {
+    width: 95px;
+    height: 39px;
+  }
+
+  /* Hide CTA button in header — available in mobile menu */
+  .navbar-right .navbar-cta {
+    display: none;
+  }
+
+  /* Show burger */
+  .navbar-mobile-btn {
+    display: flex;
+  }
+}
+
+/* ── ≤480px — small mobile ───────────────────────────── */
+@media (max-width: 480px) {
+
+  .navbar-inner {
+    height: 64px;
+  }
+
+  /* Mobile menu: use full container padding at small size */
+  .navbar-mobile-menu {
+    padding-inline: var(--container-px);
+  }
+}
+
+/* ── ≤360px — minimum supported width ───────────────── */
+@media (max-width: 360px) {
+
+  .navbar-inner {
+    height: 60px;
+  }
+
+  .navbar-logo img {
+    width: 88px;
+    height: 36px;
+  }
+
+  /* Burger bars slightly smaller */
+  .navbar-mobile-btn__bar {
+    width: 20px;
+  }
+}

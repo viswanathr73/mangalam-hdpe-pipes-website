@@ -1,0 +1,292 @@
+/* ============================================================
+   contact.css — Desktop styles for Contact Form Section
+   Brand: Mangalam HDPE Pipes
+   Primary Blue: #2b3990  |  Dark: #262a2e
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --cf-section-bg: #f5f7fa;
+  --cf-card-bg: #2b3990;
+  --cf-card-radius: 32px;
+  --cf-form-bg: #f7f8f9;
+  --cf-form-radius: 24px;
+  --cf-input-bg: #ffffff;
+  --cf-input-border: #e1e3e8;
+  --cf-input-radius: 10px;
+  --cf-btn-bg: #262a2e;
+  --cf-btn-radius: 10px;
+  --cf-text-white: #ffffff;
+  --cf-text-dark: #262a2e;
+  --cf-text-body: rgba(255, 255, 255, 0.85);
+  --cf-text-assist: rgba(255, 255, 255, 0.75);
+  --cf-placeholder: #959ba4;
+  --cf-font: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --cf-section-padding-x: 100px;
+  --cf-section-padding-y: 80px;
+  --cf-card-padding: 56px;
+  --cf-form-padding: 32px;
+  --cf-transition: 0.2s ease;
+}
+
+/* ---------- Reset ---------- */
+.contact-section *,
+.contact-section *::before,
+.contact-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-section input,
+.contact-section button {
+  font-family: var(--cf-font);
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ---------- Section Wrapper ---------- */
+.contact-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--cf-section-padding-y) var(--cf-section-padding-x);
+  background-color: var(--cf-section-bg);
+  font-family: var(--cf-font);
+  overflow: hidden;
+}
+
+/* ---------- Watermarks ---------- */
+.contact-watermark {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url('logo-watermark.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.contact-watermark--1 {
+  width: 1440px;
+  height: 671px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-watermark--2 {
+  width: 1600px;
+  height: 671px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------- Main Card ---------- */
+.contact-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  width: 100%;
+  max-width: 1240px;
+  background-color: var(--cf-card-bg);
+  border-radius: var(--cf-card-radius);
+  padding: var(--cf-card-padding);
+}
+
+/* ---------- Left Content ---------- */
+.contact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 0;
+}
+
+.contact-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-heading {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cf-text-white);
+  letter-spacing: -0.02em;
+}
+
+.contact-subtext {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--cf-text-body);
+}
+
+.contact-assist p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--cf-text-assist);
+}
+
+.contact-assist strong {
+  font-weight: 600;
+  color: var(--cf-text-white);
+}
+
+.contact-assist a {
+  color: var(--cf-text-white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity var(--cf-transition);
+}
+
+.contact-assist a:hover {
+  opacity: 0.8;
+}
+
+/* ---------- Form Card ---------- */
+.contact-form-card {
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--cf-form-bg);
+  border-radius: var(--cf-form-radius);
+  padding: var(--cf-form-padding);
+}
+
+.form-card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cf-text-dark);
+}
+
+/* ---------- Form Fields ---------- */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text / Email inputs */
+.form-field input {
+  width: 100%;
+  background-color: var(--cf-input-bg);
+  border: 1px solid var(--cf-input-border);
+  border-radius: var(--cf-input-radius);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cf-text-dark);
+  transition: border-color var(--cf-transition), box-shadow var(--cf-transition);
+}
+
+.form-field input::placeholder {
+  color: var(--cf-placeholder);
+}
+
+.form-field input:focus {
+  border-color: #2b3990;
+  box-shadow: 0 0 0 3px rgba(43, 57, 144, 0.12);
+}
+
+/* ---------- Phone Field ---------- */
+.form-field--phone {
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--cf-input-bg);
+  border: 1px solid var(--cf-input-border);
+  border-radius: var(--cf-input-radius);
+  overflow: hidden;
+  transition: border-color var(--cf-transition), box-shadow var(--cf-transition);
+}
+
+.form-field--phone:focus-within {
+  border-color: #2b3990;
+  box-shadow: 0 0 0 3px rgba(43, 57, 144, 0.12);
+}
+
+.phone-prefix {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.phone-prefix span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cf-text-dark);
+  line-height: 1;
+}
+
+.chevron-icon {
+  width: 10px;
+  height: 6px;
+  flex-shrink: 0;
+}
+
+.phone-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--cf-input-border);
+  flex-shrink: 0;
+}
+
+.form-field--phone input {
+  flex: 1;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 10px 10px;
+}
+
+.form-field--phone input:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* ---------- Submit Button ---------- */
+.form-submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  background-color: var(--cf-btn-bg);
+  border-radius: var(--cf-btn-radius);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cf-text-white);
+  cursor: pointer;
+  transition: background-color var(--cf-transition), transform var(--cf-transition), box-shadow var(--cf-transition);
+  letter-spacing: 0.01em;
+}
+
+.form-submit-btn:hover {
+  background-color: #1a1d21;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(38, 42, 46, 0.25);
+}
+
+.form-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
