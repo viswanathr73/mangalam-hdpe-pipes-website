@@ -15,7 +15,7 @@
   --res-subtitle-color: #4d545c;
   --res-name-color: #0d0d0d;
   --res-download-text: #2b3990;
-  --res-font: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --res-font: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --res-section-padding-x: 100px;
   --res-section-padding-y: 80px;
   --res-gap: 56px;
@@ -95,7 +95,9 @@
   border: 1px solid var(--res-border);
   border-radius: var(--res-card-radius);
   padding: 20px;
-  transition: box-shadow var(--res-transition), border-color var(--res-transition);
+  transition:
+    box-shadow var(--res-transition),
+    border-color var(--res-transition);
 }
 
 .resource-item:hover {
@@ -120,7 +122,9 @@
   font-size: 14px;
   font-weight: 500;
   color: var(--res-download-text);
-  transition: color var(--res-transition), transform var(--res-transition);
+  transition:
+    color var(--res-transition),
+    transform var(--res-transition);
   white-space: nowrap;
 }
 

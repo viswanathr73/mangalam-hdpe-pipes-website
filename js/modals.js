@@ -40,21 +40,21 @@ function _closeModal(id) {
 
 function _resetModal(modal) {
   modal.querySelector('form')?.reset();
-  const form    = modal.querySelector('.modal-form');
+  const form = modal.querySelector('.modal-form');
   const success = modal.querySelector('.modal-success');
-  const btn     = modal.querySelector('.modal-form__submit');
-  if (form)    form.style.display = '';
+  const btn = modal.querySelector('.modal-form__submit');
+  if (form) form.style.display = '';
   if (success) success.classList.remove('is-visible');
   if (btn) {
-    btn.disabled    = false;
+    btn.disabled = false;
     btn.textContent = btn.dataset.origText || btn.textContent;
   }
 }
 
 /* ── Expose globally immediately (before DOMContentLoaded) ── */
-window.openModal          = _openModal;
-window.closeModal         = _closeModal;
-window.openQuoteModal     = () => _openModal('quoteModal');
+window.openModal = _openModal;
+window.closeModal = _closeModal;
+window.openQuoteModal = () => _openModal('quoteModal');
 window.openDatasheetModal = () => _openModal('datasheetModal');
 
 /* ── Wire up interaction listeners after DOM is ready ── */
@@ -81,7 +81,7 @@ function initModals() {
   });
 
   /* ── Datasheet: disable submit until email is filled ── */
-  const dsEmail  = document.getElementById('ds-email');
+  const dsEmail = document.getElementById('ds-email');
   const dsSubmit = document.querySelector('#datasheetForm .modal-form__submit');
 
   if (dsEmail && dsSubmit) {
@@ -93,7 +93,7 @@ function initModals() {
   }
 
   /* ── Quote form submit ──────────────────────────────── */
-  const quoteForm    = document.getElementById('quoteForm');
+  const quoteForm = document.getElementById('quoteForm');
   const quoteSuccess = document.getElementById('quoteSuccess');
   if (quoteForm) {
     const qBtn = quoteForm.querySelector('.modal-form__submit');
@@ -111,7 +111,7 @@ function initModals() {
   }
 
   /* ── Datasheet form submit ──────────────────────────── */
-  const dsForm    = document.getElementById('datasheetForm');
+  const dsForm = document.getElementById('datasheetForm');
   const dsSuccess = document.getElementById('datasheetSuccess');
   if (dsForm) {
     dsForm.addEventListener('submit', e => {

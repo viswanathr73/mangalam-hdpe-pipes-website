@@ -12,7 +12,7 @@ function initNavbar() {
   const { qs, qsa, on, addClass, removeClass, toggleClass } = window.MG;
 
   /* ── 1. Mobile menu toggle ────────────────────────── */
-  const burger    = qs('.navbar-mobile-btn');
+  const burger = qs('.navbar-mobile-btn');
   const mobileMenu = qs('.navbar-mobile-menu');
 
   if (burger && mobileMenu) {
@@ -25,7 +25,7 @@ function initNavbar() {
 
   /* ── 2. Products dropdown (click on mobile/keyboard) */
   const dropdown = qs('.navbar-dropdown');
-  const trigger  = qs('.navbar-dropdown__trigger');
+  const trigger = qs('.navbar-dropdown__trigger');
 
   if (dropdown && trigger) {
     /* Toggle on click (works on both desktop and mobile) */

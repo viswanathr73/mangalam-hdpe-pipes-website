@@ -5,32 +5,32 @@
      #datasheetModal  — "Email catalogue"       (Image 3 spec)
 
    Figma popup spec (Image 2):
-   ┌──────────────────────────────────────────────────────┐
-   │ OVERLAY                                              │
-   │  position: fixed  inset: 0  z: 300                  │
-   │  background: rgba(0,0,0,0.50)                        │
-   │  backdrop-filter: blur(6px)                          │
-   │  display: flex  align/justify: center               │
-   │                                                      │
-   │ MODAL BOX                                            │
-   │  bg: white  border-radius: 12px                      │
-   │  width: 420px  padding: 28px 28px 24px              │
-   │                                                      │
-   │ HEADER                                               │
-   │  Title: 16px semibold #0D0D0D                        │
-   │  Close X: absolute top-16 right-16, 28×28px          │
-   │                                                      │
-   │ FIELDS (no labels — placeholder only)               │
-   │  border-bottom: 1px solid #E5E7EB (underline style) │
-   │  OR  full border input (check image — full border)  │
-   │  padding: 11px 14px  r-8px  font-size: 14px          │
-   │  Phone: flag prefix + input side-by-side             │
-   │                                                      │
-   │ SUBMIT BUTTON                                        │
-   │  "Submit Form" — right-aligned                       │
-   │  bg: #2B3990  color: white                           │
-   │  padding: 10px 20px  r-8px  font: 14px semibold      │
-   └──────────────────────────────────────────────────────┘
+  
+    OVERLAY                                              
+     position: fixed  inset: 0  z: 300                  
+     background: rgba(0,0,0,0.50)                        
+     backdrop-filter: blur(6px)                          
+     display: flex  align/justify: center               
+                                                         
+    MODAL BOX                                            
+     bg: white  border-radius: 12px                      
+     width: 420px  padding: 28px 28px 24px              
+                                                         
+    HEADER                                               
+     Title: 16px semibold #0D0D0D                        
+     Close X: absolute top-16 right-16, 28×28px          
+                                                         
+    FIELDS (no labels — placeholder only)               
+     border-bottom: 1px solid #E5E7EB (underline style) 
+     OR  full border input (check image — full border)  
+     padding: 11px 14px  r-8px  font-size: 14px          
+     Phone: flag prefix + input side-by-side             
+                                                         
+    SUBMIT BUTTON                                        
+     "Submit Form" — right-aligned                       
+     bg: #2B3990  color: white                           
+     padding: 10px 20px  r-8px  font: 14px semibold      
+   
 ============================================================ */
 
 /* ── Overlay ─────────────────────────────────────────── */
@@ -41,10 +41,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: var(--z-modal);               /* 300 */
+  z-index: var(--z-modal); /* 300 */
 
   /* Blurred dark backdrop — matches Image 2 */
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
@@ -81,7 +81,7 @@
   opacity: 0;
   transition:
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    opacity   0.25s ease;
+    opacity 0.25s ease;
 }
 
 .modal-overlay.is-open .modal-box {
@@ -104,7 +104,9 @@
   border: none;
   cursor: pointer;
   color: var(--clr-gray-400);
-  transition: background var(--transition-fast), color var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
 }
 .modal-close:hover {
   background: var(--clr-gray-100);
@@ -114,20 +116,20 @@
 /* ── Header ──────────────────────────────────────────── */
 .modal-header {
   margin-bottom: 20px;
-  padding-right: 28px;           /* don't overlap close btn */
+  padding-right: 28px; /* don't overlap close btn */
 }
 
 .modal-header__title {
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: var(--weight-semibold);
-  color: #0D0D0D;
+  color: #0d0d0d;
   line-height: 1.3;
   margin-bottom: 4px;
 }
 
 .modal-header__sub {
-  font-size: var(--text-sm);     /* 13px */
+  font-size: var(--text-sm); /* 13px */
   color: var(--clr-gray-400);
   line-height: 1.5;
 }
@@ -160,7 +162,7 @@
 }
 
 .modal-form__label--optional::after {
-  content: ' (Optional)';
+  content: " (Optional)";
   font-weight: var(--weight-regular);
   color: var(--clr-gray-400);
 }
@@ -180,7 +182,7 @@
   outline: none;
   transition:
     border-color var(--transition-base),
-    box-shadow   var(--transition-base);
+    box-shadow var(--transition-base);
 }
 .modal-form__input::placeholder,
 .modal-form__textarea::placeholder {
@@ -190,7 +192,7 @@
 .modal-form__select:focus,
 .modal-form__textarea:focus {
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px rgba(43, 57, 144, 0.10);
+  box-shadow: 0 0 0 3px rgba(43, 57, 144, 0.1);
 }
 .modal-form__textarea {
   resize: vertical;
@@ -204,11 +206,13 @@
   border: 1px solid var(--clr-gray-200);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
 }
 .modal-form__phone-wrap:focus-within {
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px rgba(43, 57, 144, 0.10);
+  box-shadow: 0 0 0 3px rgba(43, 57, 144, 0.1);
 }
 
 /* Country prefix box (+91 🇮🇳) */
@@ -239,12 +243,14 @@
   color: var(--clr-gray-900);
   background: var(--clr-white);
 }
-.modal-form__phone-input::placeholder { color: var(--clr-gray-400); }
+.modal-form__phone-input::placeholder {
+  color: var(--clr-gray-400);
+}
 
 /* ── Submit button row ───────────────────────────────── */
 .modal-form__footer {
   display: flex;
-  justify-content: flex-end;  /* right-aligned — Image 2 */
+  justify-content: flex-end; /* right-aligned — Image 2 */
   margin-top: 4px;
 }
 
@@ -264,7 +270,7 @@
   cursor: pointer;
   transition:
     background var(--transition-base),
-    box-shadow  var(--transition-base);
+    box-shadow var(--transition-base);
 }
 .modal-form__submit:hover {
   background: var(--clr-primary-dark);
@@ -290,9 +296,14 @@
   gap: 12px;
   padding: 12px 0 4px;
 }
-.modal-success.is-visible { display: flex; }
+.modal-success.is-visible {
+  display: flex;
+}
 
-.modal-success__icon { width: 52px; height: 52px; }
+.modal-success__icon {
+  width: 52px;
+  height: 52px;
+}
 
 .modal-success__title {
   font-family: var(--font-display);
@@ -319,11 +330,20 @@
     max-height: 95vh;
     max-width: 100%;
   }
-  .modal-form__row { grid-template-columns: 1fr; }
-  .modal-form__footer { justify-content: stretch; }
-  .modal-form__submit { width: 100%; justify-content: center; }
+  .modal-form__row {
+    grid-template-columns: 1fr;
+  }
+  .modal-form__footer {
+    justify-content: stretch;
+  }
+  .modal-form__submit {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 360px) {
-  .modal-box { padding: 20px 16px 24px; }
+  .modal-box {
+    padding: 20px 16px 24px;
+  }
 }

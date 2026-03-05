@@ -11,9 +11,9 @@
 function initHero() {
   const { qs, qsa, on } = window.MG;
 
-  const wrap    = qs('#heroImageWrap');
+  const wrap = qs('#heroImageWrap');
   const mainImg = qs('#heroMainImage');
-  const thumbs  = qsa('.hero-thumb');
+  const thumbs = qsa('.hero-thumb');
 
   if (!wrap || !mainImg) return;
 
@@ -24,11 +24,11 @@ function initHero() {
       if (!newSrc || mainImg.src.endsWith(newSrc)) return;
 
       /* Fade out → swap → fade in */
-      mainImg.style.opacity    = '0';
+      mainImg.style.opacity = '0';
       mainImg.style.transition = 'opacity 0.18s ease';
 
       setTimeout(() => {
-        mainImg.src           = newSrc;
+        mainImg.src = newSrc;
         mainImg.style.opacity = '1';
       }, 180);
 
@@ -55,8 +55,8 @@ function initHero() {
   /* ── 2. Mouse-tracking zoom ─────────────────────────── */
   on(wrap, 'mousemove', (e) => {
     const r = wrap.getBoundingClientRect();
-    const x = ((e.clientX - r.left)  / r.width)  * 100;
-    const y = ((e.clientY - r.top)   / r.height) * 100;
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    const y = ((e.clientY - r.top) / r.height) * 100;
     mainImg.style.transformOrigin = `${x.toFixed(1)}% ${y.toFixed(1)}%`;
   });
 

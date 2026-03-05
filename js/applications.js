@@ -10,17 +10,17 @@ function initApplications() {
   const { qs, qsa, on, clamp, debounce } = window.MG;
 
   const carousel = qs('#appCarousel');
-  const prevBtn  = qs('#appPrev');
-  const nextBtn  = qs('#appNext');
+  const prevBtn = qs('#appPrev');
+  const nextBtn = qs('#appNext');
   const dotsWrap = qs('#appDots');
   if (!carousel) return;
 
   const cards = qsa('.app-card', carousel);
-  let index   = 0;
+  let index = 0;
 
   /* ── Visible cards per viewport ──────────────────── */
   function visibleCount() {
-    if (window.innerWidth <= 800)  return 1;
+    if (window.innerWidth <= 800) return 1;
     if (window.innerWidth <= 1080) return 2;
     return 3;
   }
@@ -75,10 +75,10 @@ function initApplications() {
 
   /* ── Touch / drag ─────────────────────────────────── */
   let dragStart = null;
-  on(carousel, 'mousedown',  e => { dragStart = e.clientX; });
+  on(carousel, 'mousedown', e => { dragStart = e.clientX; });
   on(carousel, 'touchstart', e => { dragStart = e.touches[0].clientX; }, { passive: true });
-  on(carousel, 'mouseup',    e => drag(e.clientX));
-  on(carousel, 'touchend',   e => drag(e.changedTouches[0].clientX));
+  on(carousel, 'mouseup', e => drag(e.clientX));
+  on(carousel, 'touchend', e => drag(e.changedTouches[0].clientX));
 
   function drag(endX) {
     if (dragStart === null) return;

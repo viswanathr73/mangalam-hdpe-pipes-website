@@ -5,130 +5,129 @@
 ============================================================ */
 
 :root {
-
   /* ── Brand Colors ──────────────────────────────────── */
-  --clr-primary:        #2B3990;   /* main blue */
-  --clr-primary-dark:   #1F2B73;   /* hover / pressed */
-  --clr-primary-light:  #EFF3FF;   /* tints / tags */
-  --clr-primary-mid:    #3D4EAA;   /* lighter variant */
+  --clr-primary: #2b3990; /* main blue */
+  --clr-primary-dark: #1f2b73; /* hover / pressed */
+  --clr-primary-light: #eff3ff; /* tints / tags */
+  --clr-primary-mid: #3d4eaa; /* lighter variant */
 
-  --clr-accent:         #E63946;   /* red accent (cert dot, etc.) */
+  --clr-accent: #e63946; /* red accent (cert dot, etc.) */
 
   /* ── Neutral Scale ─────────────────────────────────── */
-  --clr-white:   #FFFFFF;
-  --clr-black:   #0D0D0D;
+  --clr-white: #ffffff;
+  --clr-black: #0d0d0d;
 
-  --clr-gray-50:  #F9FAFB;
-  --clr-gray-100: #F3F4F6;
-  --clr-gray-200: #E5E7EB;
-  --clr-gray-300: #D1D5DB;
-  --clr-gray-400: #9CA3AF;
-  --clr-gray-500: #6B7280;
-  --clr-gray-600: #4B5563;
+  --clr-gray-50: #f9fafb;
+  --clr-gray-100: #f3f4f6;
+  --clr-gray-200: #e5e7eb;
+  --clr-gray-300: #d1d5db;
+  --clr-gray-400: #9ca3af;
+  --clr-gray-500: #6b7280;
+  --clr-gray-600: #4b5563;
   --clr-gray-700: #374151;
-  --clr-gray-800: #1F2937;
+  --clr-gray-800: #1f2937;
   --clr-gray-900: #111827;
 
   /* ── Semantic Colors ───────────────────────────────── */
-  --clr-success:      #16A34A;
-  --clr-warning-bg:   #FEF3C7;
-  --clr-warning-text: #92400E;
-  --clr-info-bg:      #EFF6FF;
-  --clr-info-text:    #1D4ED8;
+  --clr-success: #16a34a;
+  --clr-warning-bg: #fef3c7;
+  --clr-warning-text: #92400e;
+  --clr-info-bg: #eff6ff;
+  --clr-info-text: #1d4ed8;
 
   /* ── Dark Background (Process section) ────────────── */
-  --clr-dark-bg:     #0F172A;
-  --clr-dark-card:   #1E2A45;
-  --clr-dark-border: #2D3F66;
-  --clr-dark-text:   rgba(255,255,255,0.55);
+  --clr-dark-bg: #0f172a;
+  --clr-dark-card: #1e2a45;
+  --clr-dark-border: #2d3f66;
+  --clr-dark-text: rgba(255, 255, 255, 0.55);
 
   /* ── Typography ────────────────────────────────────── */
-  --font-body:    'Inter', system-ui, sans-serif;
-  --font-display: 'Urbanist', system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Urbanist", system-ui, sans-serif;
 
-  --text-xs:   11px;
-  --text-sm:   13px;
+  --text-xs: 11px;
+  --text-sm: 13px;
   --text-base: 15px;
-  --text-md:   16px;
-  --text-lg:   18px;
-  --text-xl:   20px;
-  --text-2xl:  24px;
-  --text-3xl:  30px;
-  --text-4xl:  36px;
-  --text-5xl:  44px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 44px;
 
-  --weight-regular:   400;
-  --weight-medium:    500;
-  --weight-semibold:  600;
-  --weight-bold:      700;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
   --weight-extrabold: 800;
 
-  --leading-tight:  1.2;
-  --leading-snug:   1.35;
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
   --leading-normal: 1.6;
-  --leading-relaxed:1.75;
+  --leading-relaxed: 1.75;
 
   /* ── Spacing Scale ─────────────────────────────────── */
-  --space-1:   4px;
-  --space-2:   8px;
-  --space-3:   12px;
-  --space-4:   16px;
-  --space-5:   20px;
-  --space-6:   24px;
-  --space-8:   32px;
-  --space-10:  40px;
-  --space-12:  48px;
-  --space-14:  56px;
-  --space-16:  64px;
-  --space-20:  80px;
-  --space-24:  96px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
 
   /* ── Border Radius ─────────────────────────────────── */
-  --radius-xs:  4px;
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  14px;
-  --radius-xl:  18px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
   --radius-2xl: 24px;
   --radius-full: 9999px;
 
   /* ── Shadows ───────────────────────────────────────── */
-  --shadow-xs: 0 1px 2px rgba(0,0,0,.05);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-  --shadow-md: 0 4px 12px rgba(0,0,0,.10);
-  --shadow-lg: 0 10px 32px rgba(0,0,0,.12);
-  --shadow-xl: 0 20px 48px rgba(0,0,0,.16);
-  --shadow-primary: 0 6px 20px rgba(43,57,144,.35);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.16);
+  --shadow-primary: 0 6px 20px rgba(43, 57, 144, 0.35);
 
   /* ── Transitions ───────────────────────────────────── */
-  --transition-fast:   0.15s ease;
-  --transition-base:   0.25s ease;
-  --transition-slow:   0.4s ease;
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
   --transition-spring: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* ── Z-Index Stack ─────────────────────────────────── */
-  --z-base:    1;
-  --z-dropdown:100;
-  --z-sticky:  200;
-  --z-modal:   300;
-  --z-toast:   400;
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
 
   /* ── Navbar ─────────────────────────────────────────── */
-  --navbar-height-desktop: 72px;   /* total row height on desktop */
-  --navbar-height-mobile:  64px;   /* total row height on mobile  */
-  --navbar-bg:             var(--clr-white);
-  --navbar-border:         var(--clr-gray-200);
-  --navbar-link-color:     #1A1A1A;
-  --navbar-link-hover:     var(--clr-primary);
-  --navbar-logo-color:     #6B1E2E;  /* maroon from Figma logo text */
+  --navbar-height-desktop: 72px; /* total row height on desktop */
+  --navbar-height-mobile: 64px; /* total row height on mobile  */
+  --navbar-bg: var(--clr-white);
+  --navbar-border: var(--clr-gray-200);
+  --navbar-link-color: #1a1a1a;
+  --navbar-link-hover: var(--clr-primary);
+  --navbar-logo-color: #6b1e2e; /* maroon from Figma logo text */
 
   /* ── Layout ────────────────────────────────────────── */
   --container-max: 1240px;
 
   /* Section vertical padding */
-  --section-py: var(--space-20);      /* 80px  — default */
+  --section-py: var(--space-20); /* 80px  — default */
 
   /* Container horizontal padding per breakpoint
      (actual values applied in responsive.css)         */
-  --container-px: 100px;              /* ≤1600px default */
+  --container-px: 100px; /* ≤1600px default */
 }

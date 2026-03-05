@@ -11,15 +11,25 @@
 
 /* ── ≤1080px ─────────────────────────────────────────── */
 @media (max-width: 1080px) {
-  .faq-section       { padding: 80px var(--container-px); }
-  .faq-heading       { font-size: 36px; }
-  .faq-cta-bar__title{ font-size: 22px; }
+  .faq-section {
+    padding: 80px var(--container-px);
+  }
+  .faq-heading {
+    font-size: 36px;
+  }
+  .faq-cta-bar__title {
+    font-size: 22px;
+  }
 }
 
 /* ── ≤800px: CTA bar stacks vertically ───────────────── */
 @media (max-width: 800px) {
-  .faq-section       { padding: 60px var(--container-px); }
-  .faq-heading       { font-size: 30px; }
+  .faq-section {
+    padding: 60px var(--container-px);
+  }
+  .faq-heading {
+    font-size: 30px;
+  }
 
   /* Stack the left text + right form */
   .faq-cta-bar {
@@ -28,32 +38,66 @@
     gap: 20px;
   }
 
-  .faq-cta-bar__text  { max-width: 100%; }
-  .faq-cta-bar__form  { max-width: 100%; width: 100%; }
-  .faq-cta-bar__title { font-size: 20px; }
+  .faq-cta-bar__text {
+    max-width: 100%;
+  }
+  .faq-cta-bar__form {
+    max-width: 100%;
+    width: 100%;
+  }
+  .faq-cta-bar__title {
+    font-size: 20px;
+  }
 }
 
 /* ── ≤480px ──────────────────────────────────────────── */
 @media (max-width: 480px) {
-  .faq-heading       { font-size: 26px; }
-  .faq-inner         { gap: 40px; }
-  .faq-content       { gap: 40px; }
-  .faq-list          { gap: 16px; }
+  .faq-heading {
+    font-size: 26px;
+  }
+  .faq-inner {
+    gap: 40px;
+  }
+  .faq-content {
+    gap: 40px;
+  }
+  .faq-list {
+    gap: 16px;
+  }
 
   /* Items: tighter padding on small screens */
-  .faq-item          { padding: 16px; }
+  .faq-item {
+    padding: 16px;
+  }
 
   /* CTA form: button full width */
-  .faq-cta-bar__btn  { width: 100%; justify-content: center; }
+  .faq-cta-bar__btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ── ≤360px: minimum supported width ────────────────── */
 @media (max-width: 360px) {
-  .faq-heading        { font-size: 22px; }
-  .faq-section        { padding: 48px var(--container-px); }
-  .faq-question__text { font-size: 14px; }
-  .faq-answer p       { font-size: 14px; }
-  .faq-cta-bar        { padding: 16px; }
-  .faq-cta-bar__title { font-size: 18px; }
-  .faq-cta-bar__sub   { font-size: 14px; }
+  .faq-heading {
+    font-size: 22px;
+  }
+  .faq-section {
+    padding: 48px var(--container-px);
+  }
+  .faq-question__text {
+    font-size: 14px;
+  }
+  .faq-answer p {
+    font-size: 14px;
+  }
+  .faq-cta-bar {
+    padding: 16px;
+  }
+  .faq-cta-bar__title {
+    font-size: 18px;
+  }
+  .faq-cta-bar__sub {
+    font-size: 14px;
+  }
 }

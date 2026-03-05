@@ -11,7 +11,7 @@ function initFAQ() {
   const items = qsa('.faq-item');
 
   items.forEach(item => {
-    const btn    = item.querySelector('.faq-question');
+    const btn = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
     if (!btn || !answer) return;
 
@@ -22,7 +22,7 @@ function initFAQ() {
       items.forEach(other => {
         other.classList.remove('is-open');
         other.querySelector('.faq-question')
-             ?.setAttribute('aria-expanded', 'false');
+          ?.setAttribute('aria-expanded', 'false');
       });
 
       /* Toggle clicked */

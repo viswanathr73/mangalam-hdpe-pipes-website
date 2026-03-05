@@ -12,16 +12,29 @@
 
 /* ── ≤1080px ─────────────────────────────────────────── */
 @media (max-width: 1080px) {
-  .manufacturing-section { padding: 80px var(--container-px); }
-  .mfg-heading__title { font-size: 36px; }
-  .mfg-heading__sub   { font-size: 16px; }
-  .mfg-card { gap: 32px; padding: 32px; }
+  .manufacturing-section {
+    padding: 80px var(--container-px);
+  }
+  .mfg-heading__title {
+    font-size: 36px;
+  }
+  .mfg-heading__sub {
+    font-size: 16px;
+  }
+  .mfg-card {
+    gap: 32px;
+    padding: 32px;
+  }
 }
 
 /* ── ≤800px: stack to single column ─────────────────── */
 @media (max-width: 800px) {
-  .manufacturing-section { padding: 60px var(--container-px); }
-  .mfg-heading__title { font-size: 28px; }
+  .manufacturing-section {
+    padding: 60px var(--container-px);
+  }
+  .mfg-heading__title {
+    font-size: 28px;
+  }
 
   /* Tabs: allow horizontal scroll on small screens */
   .mfg-tabs {
@@ -38,39 +51,68 @@
   }
 
   /* Image comes after text on mobile */
-  .mfg-card__text  { order: 1; }
-  .mfg-card__media { order: 2; }
+  .mfg-card__text {
+    order: 1;
+  }
+  .mfg-card__media {
+    order: 2;
+  }
 
   /* Hide image overlay nav buttons on mobile */
-  .mfg-card__nav { display: none; }
+  .mfg-card__nav {
+    display: none;
+  }
 
   /* Show step badge (hidden on desktop) */
-  .mfg-step-badge { display: inline-flex; }
+  .mfg-step-badge {
+    display: inline-flex;
+  }
 
   /* Show mobile prev/next nav (hidden on desktop) */
-  .mfg-mobile-nav { display: flex; }
+  .mfg-mobile-nav {
+    display: flex;
+  }
 }
 
 /* ── ≤480px ──────────────────────────────────────────── */
 @media (max-width: 480px) {
-  .mfg-heading__title  { font-size: 24px; }
-  .mfg-heading__sub    { font-size: 15px; }
-  .mfg-card__title     { font-size: 20px; }
-  .mfg-card__desc      { font-size: 15px; }
-  .mfg-inner           { gap: 32px; }
+  .mfg-heading__title {
+    font-size: 24px;
+  }
+  .mfg-heading__sub {
+    font-size: 15px;
+  }
+  .mfg-card__title {
+    font-size: 20px;
+  }
+  .mfg-card__desc {
+    font-size: 15px;
+  }
+  .mfg-inner {
+    gap: 32px;
+  }
 }
 
 /* ── ≤360px ──────────────────────────────────────────── */
 @media (max-width: 360px) {
-  .manufacturing-section { padding: 48px var(--container-px); }
-  .mfg-heading__title  { font-size: 22px; }
-  .mfg-card            { padding: 18px; }
-  .mfg-tab             { padding: 6px 12px; font-size: 13px; }
+  .manufacturing-section {
+    padding: 48px var(--container-px);
+  }
+  .mfg-heading__title {
+    font-size: 22px;
+  }
+  .mfg-card {
+    padding: 18px;
+  }
+  .mfg-tab {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
 }
 
 /* ── Step badge — mobile only (hidden desktop) ───────── */
 .mfg-step-badge {
-  display: none;            /* shown at ≤800px via above rule */
+  display: none; /* shown at ≤800px via above rule */
   align-items: center;
   gap: 8px;
   padding: 5px 12px;
@@ -85,7 +127,7 @@
 
 /* ── Mobile prev/next text nav — hidden desktop ──────── */
 .mfg-mobile-nav {
-  display: none;            /* shown at ≤800px */
+  display: none; /* shown at ≤800px */
   align-items: center;
   justify-content: space-between;
   gap: 16px;
@@ -109,4 +151,6 @@
   color: var(--clr-gray-400);
   cursor: not-allowed;
 }
-.mfg-mobile-nav__btn:not(:disabled):hover { opacity: 0.75; }
+.mfg-mobile-nav__btn:not(:disabled):hover {
+  opacity: 0.75;
+}

@@ -4,18 +4,17 @@
    Base desktop styles → css/hero.css
 
    Figma mobile spec (360px wide):
-   • Single column — image full width, then info below
-   • Image height: ~220px
-   • H1: 26px
-   • Cert pills wrap to 2 rows
-   • Badges wrap
-   • Buttons stack full-width
-   • Trusted logos: 3 per row, 24px gap
+    Single column — image full width, then info below
+    Image height: ~220px
+    H1: 26px
+    Cert pills wrap to 2 rows
+    Badges wrap
+    Buttons stack full-width
+    Trusted logos: 3 per row, 24px gap
 ============================================================ */
 
 /* ── ≤1080px — tablet: stack to single column ───────── */
 @media (max-width: 1080px) {
-
   /* Stack the two columns */
   .hero-wrapper {
     grid-template-columns: 1fr;
@@ -40,7 +39,6 @@
 
 /* ── ≤800px — large mobile ───────────────────────────── */
 @media (max-width: 800px) {
-
   /* Section padding already handled by responsive.css */
   .hero-section {
     padding-top: 32px;
@@ -71,15 +69,16 @@
   .hero-thumbs {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 4px;           /* room for scrollbar */
-    scrollbar-width: none;         /* Firefox */
+    padding-bottom: 4px; /* room for scrollbar */
+    scrollbar-width: none; /* Firefox */
   }
-  .hero-thumbs::-webkit-scrollbar { display: none; }
+  .hero-thumbs::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* ── ≤480px — small mobile ───────────────────────────── */
 @media (max-width: 480px) {
-
   /* Breadcrumb: tighten */
   .hero-breadcrumb {
     margin-bottom: 20px;
@@ -139,7 +138,6 @@
 
 /* ── ≤360px — minimum supported ─────────────────────── */
 @media (max-width: 360px) {
-
   .hero-title {
     font-size: 22px;
   }

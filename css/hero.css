@@ -411,14 +411,12 @@ background-image: url("../assets/images/bg-image-main.png");
 }
 
 .hero-trusted__logos img {
-  height: 28px;
-  width: auto;
-  opacity: 0.55;
-  filter: grayscale(30%);
-  transition:
-    opacity var(--transition-base),
-    filter var(--transition-base);
-}
+  width: 110px;
+  height: auto;
+  opacity: 0.65;
+  transition: var(--transition);
+  filter: grayscale(20%);
+
 
 .hero-trusted__logos img:hover {
   opacity: 1;

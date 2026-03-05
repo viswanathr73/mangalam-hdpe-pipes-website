@@ -12,12 +12,22 @@
     padding: 80px var(--container-px);
     overflow: hidden;
   }
-  .testi-heading__title { font-size: 36px; }
-  .testi-heading__sub   { font-size: 16px; }
+  .testi-heading__title {
+    font-size: 36px;
+  }
+  .testi-heading__sub {
+    font-size: 16px;
+  }
 
   /* Allow horizontal scroll on the wrapper */
-  .testi-wrapper { overflow-x: auto; width: 100%; scrollbar-width: none; }
-  .testi-wrapper::-webkit-scrollbar { display: none; }
+  .testi-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+  }
+  .testi-wrapper::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Reset the negative margin trick — scroll handles reveal */
   .testi-row {
@@ -31,26 +41,41 @@
     flex: 0 0 calc(44vw - 8px);
     width: calc(44vw - 8px);
   }
-  .testi-card__title { font-size: 20px; }
+  .testi-card__title {
+    font-size: 20px;
+  }
 }
 
 /* ── ≤800px: 2 full cards ────────────────────────────── */
 @media (max-width: 800px) {
-  .testimonials-section { padding: 60px var(--container-px); }
-  .testi-heading__title { font-size: 28px; }
+  .testimonials-section {
+    padding: 60px var(--container-px);
+  }
+  .testi-heading__title {
+    font-size: 28px;
+  }
 
   .testi-card {
     flex: 0 0 calc(50vw - 44px);
     width: calc(50vw - 44px);
   }
-  .testi-card__title { font-size: 18px; }
-  .testi-card__body  { font-size: 15px; }
-  .testi-card        { padding: 24px; gap: 28px; }
+  .testi-card__title {
+    font-size: 18px;
+  }
+  .testi-card__body {
+    font-size: 15px;
+  }
+  .testi-card {
+    padding: 24px;
+    gap: 28px;
+  }
 }
 
 /* ── ≤480px: 1 card + right peek ────────────────────── */
 @media (max-width: 480px) {
-  .testi-heading__title { font-size: 24px; }
+  .testi-heading__title {
+    font-size: 24px;
+  }
   .testi-card {
     flex: 0 0 80vw;
     width: 80vw;
@@ -60,8 +85,12 @@
 
 /* ── ≤360px ──────────────────────────────────────────── */
 @media (max-width: 360px) {
-  .testimonials-section { padding: 48px var(--container-px); }
-  .testi-heading__title { font-size: 22px; }
+  .testimonials-section {
+    padding: 48px var(--container-px);
+  }
+  .testi-heading__title {
+    font-size: 22px;
+  }
   .testi-card {
     flex: 0 0 calc(100vw - 32px);
     width: calc(100vw - 32px);
@@ -69,5 +98,8 @@
     border-radius: 16px;
   }
   .testi-card__logo-placeholder,
-  .testi-card__logo { width: 90px; height: 24px; }
+  .testi-card__logo {
+    width: 90px;
+    height: 24px;
+  }
 }

@@ -3,7 +3,9 @@
    Modern CSS reset. Normalises browser defaults.
 ============================================================ */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,20 +23,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 

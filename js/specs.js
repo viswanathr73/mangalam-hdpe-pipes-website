@@ -16,13 +16,13 @@ function initSpecs() {
 
   /* Collect all param+spec pairs from the desktop columns */
   const paramCells = [...tableWrap.querySelectorAll('.specs-col--param .specs-cell')];
-  const specCells  = [...tableWrap.querySelectorAll('.specs-col--spec  .specs-cell')];
+  const specCells = [...tableWrap.querySelectorAll('.specs-col--spec  .specs-cell')];
 
   if (!paramCells.length || !specCells.length) return;
 
   /* Build the mobile rows once, keep them in a fragment */
   const mobileHeader = buildMobileHeader();
-  const mobileRows   = paramCells.map((paramCell, i) => {
+  const mobileRows = paramCells.map((paramCell, i) => {
     const specCell = specCells[i];
     return buildMobileRow(
       paramCell.querySelector('span')?.textContent?.trim() ?? '',

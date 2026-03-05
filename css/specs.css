@@ -5,37 +5,37 @@
    JS behaviour → js/specs.js
 
    Figma / Tailwind source map:
-   ┌─────────────────────────────────────────────────────┐
-   │ Section bg:    gray-900  → #111827                  │
-   │ Section pad:   100px all sides                      │
-   │ H2:            48px Urbanist Bold, white            │
-   │ Subtitle:      18px regular, white                  │
-   │ Gap heading→table: 20px (gap-5)                     │
-   │ Gap table→btn: 56px (gap-14)                        │
-   │                                                     │
-   │ TABLE                                               │
-   │  border: 1.25px solid gray-700 (#374151)            │
-   │  border-radius: 12px                                │
-   │  overflow: hidden (clips row bg to radius)          │
-   │  two equal columns (grow:1 each)                    │
-   │                                                     │
-   │  Header row:  bg gray-700, px-6 py-3                │
-   │               text: 14px medium uppercase white     │
-   │  Divider:     1px solid gray-700                    │
-   │  Data rows:   bg gray-800, px-6 py-4                │
-   │               text: 16px, white                     │
-   │               left col: medium; right col: normal   │
-   │                                                     │
-   │ DOWNLOAD BTN                                        │
-   │  outlined white, h-52px, px-5 pl-4, r-12px         │
-   │  16px medium white, download icon left              │
-   │  centered below table                               │
-   └─────────────────────────────────────────────────────┘
+   
+    Section bg:    gray-900  → #111827                  
+    Section pad:   100px all sides                      
+    H2:            48px Urbanist Bold, white            
+    Subtitle:      18px regular, white                  
+    Gap heading→table: 20px (gap-5)                     
+    Gap table→btn: 56px (gap-14)                        
+                                                        
+    TABLE                                               
+     border: 1.25px solid gray-700 (#374151)            
+     border-radius: 12px                                
+     overflow: hidden (clips row bg to radius)          
+     two equal columns (grow:1 each)                    
+                                                        
+     Header row:  bg gray-700, px-6 py-3                
+                  text: 14px medium uppercase white     
+     Divider:     1px solid gray-700                    
+     Data rows:   bg gray-800, px-6 py-4                
+                  text: 16px, white                     
+                  left col: medium; right col: normal  
+                                                        
+    DOWNLOAD BTN                                        
+     outlined white, h-52px, px-5 pl-4, r-12px         
+     16px medium white, download icon left              
+     centered below table                               
+   
 ============================================================ */
 
 /* ── Section shell ───────────────────────────────────── */
 .specs-section {
-  background-color: var(--clr-gray-900);   /* #111827 */
+  background-color: var(--clr-gray-900); /* #111827 */
   padding: 100px var(--container-px);
 }
 
@@ -44,7 +44,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 56px;                               /* gap-14 */
+  gap: 56px; /* gap-14 */
 }
 
 /* ── Heading block: flex col, gap-5 (20px) ──────────── */
@@ -76,7 +76,7 @@
   width: 100%;
   border: 1.25px solid var(--clr-gray-700);
   border-radius: 12px;
-  overflow: hidden;                        /* clips rows to border-radius */
+  overflow: hidden; /* clips rows to border-radius */
   /* Two equal columns side by side */
   display: flex;
 }
@@ -86,7 +86,7 @@
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  min-width: 0;                            /* prevents flex overflow */
+  min-width: 0; /* prevents flex overflow */
 }
 
 /* Vertical divider between the two columns */
@@ -98,12 +98,12 @@
 .specs-col__header {
   display: flex;
   align-items: center;
-  padding: 12px 24px;                      /* py-3 px-6 */
-  background: var(--clr-gray-700);        /* #374151 */
+  padding: 12px 24px; /* py-3 px-6 */
+  background: var(--clr-gray-700); /* #374151 */
 }
 
 .specs-col__header span {
-  font-size: 14px;                         /* text-sm */
+  font-size: 14px; /* text-sm */
   font-weight: var(--weight-medium);
   color: var(--clr-white);
   text-transform: uppercase;
@@ -122,8 +122,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 24px;                      /* py-4 px-6 */
-  background: var(--clr-gray-800);        /* #1F2937 */
+  padding: 16px 24px; /* py-4 px-6 */
+  background: var(--clr-gray-800); /* #1F2937 */
   /* Stretch to fill column width */
   width: 100%;
 }

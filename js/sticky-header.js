@@ -9,7 +9,7 @@
 function initStickyHeader() {
   const { qs, addClass, removeClass, rafThrottle } = window.MG;
 
-  const sticky  = qs('#stickyHeader');
+  const sticky = qs('#stickyHeader');
   const mainNav = qs('#mainNav');
   if (!sticky || !mainNav) return;
 

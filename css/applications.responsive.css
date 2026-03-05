@@ -11,15 +11,25 @@
 
 /* ── ≤1080px ─────────────────────────────────────────── */
 @media (max-width: 1080px) {
-  .applications-section { padding: 80px var(--container-px); }
-  .applications-heading__title { font-size: 34px; }
-  .applications-heading__sub   { font-size: 16px; }
+  .applications-section {
+    padding: 80px var(--container-px);
+  }
+  .applications-heading__title {
+    font-size: 34px;
+  }
+  .applications-heading__sub {
+    font-size: 16px;
+  }
 }
 
 /* ── ≤800px: rows break → 2 cards per row ────────────── */
 @media (max-width: 800px) {
-  .applications-section { padding: 60px var(--container-px); }
-  .applications-heading__title { font-size: 28px; }
+  .applications-section {
+    padding: 60px var(--container-px);
+  }
+  .applications-heading__title {
+    font-size: 28px;
+  }
 
   /* Stop using explicit rows — let cards wrap 2-per-row */
   .applications-grid {
@@ -31,28 +41,39 @@
   /* Remove the row containers — they can't be used here.
      Cards directly in grid, each takes ~50% minus gap      */
   .applications-row {
-    display: contents;   /* dissolves row, children join grid */
+    display: contents; /* dissolves row, children join grid */
   }
 
   .applications-card {
-    flex: 0 0 calc(50% - 8px);  /* 2 per row with 16px gap */
+    flex: 0 0 calc(50% - 8px); /* 2 per row with 16px gap */
     min-width: 0;
   }
 }
 
 /* ── ≤480px ──────────────────────────────────────────── */
 @media (max-width: 480px) {
-  .applications-heading__title { font-size: 24px; }
-  .applications-cta { width: 100%; justify-content: center; }
+  .applications-heading__title {
+    font-size: 24px;
+  }
+  .applications-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ── ≤360px: 1 card per row ──────────────────────────── */
 @media (max-width: 360px) {
-  .applications-heading__title { font-size: 22px; }
-  .applications-heading__sub   { font-size: 15px; }
-  .applications-grid { gap: 12px; }
+  .applications-heading__title {
+    font-size: 22px;
+  }
+  .applications-heading__sub {
+    font-size: 15px;
+  }
+  .applications-grid {
+    gap: 12px;
+  }
 
   .applications-card {
-    flex: 0 0 100%;   /* full width — 1 per row */
+    flex: 0 0 100%; /* full width — 1 per row */
   }
 }

@@ -11,19 +11,32 @@
 
 /* ── ≤1200px: slight heading scale ──────────────────── */
 @media (max-width: 1200px) {
-  .process-header__title { font-size: 38px; }
-  .process-card { flex: 0 0 380px; width: 380px; height: 380px; }
+  .process-header__title {
+    font-size: 38px;
+  }
+  .process-card {
+    flex: 0 0 380px;
+    width: 380px;
+    height: 380px;
+  }
 }
 
 /* ── ≤1080px: 2 full + 10% peek on each side ────────── */
 @media (max-width: 1080px) {
   .process-section {
-    padding-top:    80px;
+    padding-top: 80px;
     padding-bottom: 80px;
   }
-  .process-header__title { font-size: 32px; }
-  .process-header__sub   { font-size: 16px; }
-  .process-nav__btn { width: 52px; height: 52px; }
+  .process-header__title {
+    font-size: 32px;
+  }
+  .process-header__sub {
+    font-size: 16px;
+  }
+  .process-nav__btn {
+    width: 52px;
+    height: 52px;
+  }
 
   /*
     Card width = (viewport - 2×container-px - gap) / 2 - peek
@@ -38,21 +51,38 @@
     width: calc(45vw - 8px);
     height: 360px;
   }
-  .process-card__title { font-size: 22px; }
-  .process-card__content { padding: 24px 20px; }
+  .process-card__title {
+    font-size: 22px;
+  }
+  .process-card__content {
+    padding: 24px 20px;
+  }
 }
 
 /* ── ≤800px: exactly 2 full cards, no peek ───────────── */
 @media (max-width: 800px) {
   .process-section {
-    padding-top:    60px;
+    padding-top: 60px;
     padding-bottom: 60px;
   }
-  .process-header { flex-wrap: wrap; gap: 16px; }
-  .process-header__title { font-size: 26px; }
-  .process-header__sub   { font-size: 15px; }
-  .process-nav__btn { width: 44px; height: 44px; }
-  .process-nav__btn svg  { width: 14px; height: 11px; }
+  .process-header {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .process-header__title {
+    font-size: 26px;
+  }
+  .process-header__sub {
+    font-size: 15px;
+  }
+  .process-nav__btn {
+    width: 44px;
+    height: 44px;
+  }
+  .process-nav__btn svg {
+    width: 14px;
+    height: 11px;
+  }
 
   /*
     2 full cards: each = (container - gap) / 2
@@ -65,14 +95,23 @@
     width: calc(50vw - 56px);
     height: 320px;
   }
-  .process-card__title { font-size: 20px; }
-  .process-card__desc  { font-size: 14px; }
-  .process-card__content { padding: 20px 16px; gap: 8px; }
+  .process-card__title {
+    font-size: 20px;
+  }
+  .process-card__desc {
+    font-size: 14px;
+  }
+  .process-card__content {
+    padding: 20px 16px;
+    gap: 8px;
+  }
 }
 
 /* ── ≤480px: 1 card + right peek ────────────────────── */
 @media (max-width: 480px) {
-  .process-header__title { font-size: 22px; }
+  .process-header__title {
+    font-size: 22px;
+  }
 
   /* 85vw wide so 15% of next card peeks right */
   .process-card {
@@ -85,8 +124,13 @@
 
 /* ── ≤360px: 1 full card ─────────────────────────────── */
 @media (max-width: 360px) {
-  .process-section { padding-top: 48px; padding-bottom: 48px; }
-  .process-header__title { font-size: 20px; }
+  .process-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .process-header__title {
+    font-size: 20px;
+  }
 
   .process-card {
     flex: 0 0 calc(100vw - 32px);
@@ -94,6 +138,11 @@
     height: 260px;
     border-radius: 16px;
   }
-  .process-carousel  { padding-left: 16px; }
-  .process-nav__btn  { width: 38px; height: 38px; }
+  .process-carousel {
+    padding-left: 16px;
+  }
+  .process-nav__btn {
+    width: 38px;
+    height: 38px;
+  }
 }

@@ -12,7 +12,6 @@
 
 /* ── ≤1080px — tablet ────────────────────────────────── */
 @media (max-width: 1080px) {
-
   /* Hide desktop nav links + show burger */
   .navbar-links {
     display: none;
@@ -25,7 +24,6 @@
 
 /* ── ≤800px — large mobile ───────────────────────────── */
 @media (max-width: 800px) {
-
   /* Slightly reduce navbar height */
   .navbar-inner {
     height: var(--navbar-height-mobile);
@@ -50,7 +48,6 @@
 
 /* ── ≤480px — small mobile ───────────────────────────── */
 @media (max-width: 480px) {
-
   .navbar-inner {
     height: 64px;
   }
@@ -63,7 +60,6 @@
 
 /* ── ≤360px — minimum supported width ───────────────── */
 @media (max-width: 360px) {
-
   .navbar-inner {
     height: 60px;
   }

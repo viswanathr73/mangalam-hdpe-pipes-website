@@ -1,26 +1,24 @@
-
 /* ============================================================
    APPLICATIONS CAROUSEL — css/process.css
    "Versatile Applications Across Industries"
 
    PEEK LAYOUT EXPLAINED:
-   ┌──────────────────────────────────────────────────────────┐
-   │ Desktop (>1080px):                                       │
-   │  [90%card] [full] [full] [90%card] ← 4 items peek       │
-   │                                                          │
-   │ ≤1080px:                                                 │
-   │  [10%] [full] [full] [10%] ← 2 full + side peeks        │
-   │                                                          │
-   │ ≤800px:                                                  │
-   │  [full card] [full card] ← 2 full, no peek               │
-   │                                                          │
-   │ TECHNIQUE:                                               │
-   │  - .process-section: overflow: hidden (clip)            │
-   │  - .process-carousel: width wider than container,       │
-   │    uses negative margins to bleed past padding          │
-   │  - Card width = fixed px, JS reads offsetWidth          │
-   │  - translateX moves track; partial cards peek at edges  │
-   └──────────────────────────────────────────────────────────┘
+   
+    Desktop (>1080px):                                       
+     [90%card] [full] [full] [90%card] ← 4 items peek       
+                                                             
+    ≤1080px:                                                 
+     [10%] [full] [full] [10%] ← 2 full + side peeks        
+                                                             
+    ≤800px:                                                  
+     [full card] [full card] ← 2 full, no peek               
+                                                            
+    TECHNIQUE:                                               
+    - .process-section: overflow: hidden (clip)            
+     - .process-carousel: width wider than container,       
+       uses negative margins to bleed past padding          
+     - Card width = fixed px, JS reads offsetWidth          
+     - translateX moves track; partial cards peek at edges  
 
    Figma values:
    section pad: 100px  card: 420×420px  gap: 16px  r: 32px
@@ -30,11 +28,11 @@
 /* ── Section: clips overflowing cards ───────────────── */
 .process-section {
   background: var(--clr-white);
-  padding-top:    100px;
+  padding-top: 100px;
   padding-bottom: 100px;
   /* Horizontal padding handled separately so carousel can bleed */
-  padding-left:   0;
-  padding-right:  0;
+  padding-left: 0;
+  padding-right: 0;
   overflow: hidden;
 }
 
@@ -51,7 +49,7 @@
   align-items: flex-start;
   gap: 20px;
   /* Indent with container padding */
-  padding-left:  var(--container-px);
+  padding-left: var(--container-px);
   padding-right: var(--container-px);
   max-width: var(--container-max);
   margin-inline: auto;
@@ -71,14 +69,14 @@
   font-size: 44px;
   font-weight: var(--weight-bold);
   line-height: 1.1;
-  color: #0D0D0D;
+  color: #0d0d0d;
 }
 
 .process-header__sub {
   font-size: 18px;
   font-weight: var(--weight-regular);
   line-height: 1.6;
-  color: #4D545C;
+  color: #4d545c;
   max-width: 540px;
   margin: 0;
 }
@@ -97,25 +95,27 @@
   height: 68px;
   border-radius: var(--radius-full);
   background: var(--clr-white);
-  border: 1px solid #CFD1D4;
+  border: 1px solid #cfd1d4;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
   transition:
-    background   var(--transition-base),
+    background var(--transition-base),
     border-color var(--transition-base),
-    box-shadow   var(--transition-base),
-    transform    var(--transition-base);
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 .process-nav__btn:hover {
   border-color: var(--clr-primary);
   background: var(--clr-primary-light);
-  box-shadow: 0 2px 8px rgba(43,57,144,0.12);
+  box-shadow: 0 2px 8px rgba(43, 57, 144, 0.12);
   transform: translateY(-1px);
 }
-.process-nav__btn:active  { transform: scale(0.95); }
+.process-nav__btn:active {
+  transform: scale(0.95);
+}
 .process-nav__btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;
@@ -128,7 +128,9 @@
   color: #374151;
   transition: color var(--transition-base);
 }
-.process-nav__btn:hover svg { color: var(--clr-primary); }
+.process-nav__btn:hover svg {
+  color: var(--clr-primary);
+}
 
 /* ── Carousel viewport ───────────────────────────────── */
 /*
@@ -139,7 +141,7 @@
 */
 .process-carousel {
   width: 100%;
-  padding-top:56px;
+  padding-top: 56px;
   overflow: hidden;
   /* Left padding = container padding so first card aligns with header text */
   padding-left: var(--container-px);
@@ -148,7 +150,7 @@
 /* ── Track: horizontal flex, translated by JS ────────── */
 .process-track {
   display: flex;
-  gap: 16px;                 /* gap-4 */
+  gap: 16px; /* gap-4 */
   transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
   /* Allow track to be wider than viewport */
@@ -194,10 +196,10 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.88)  0%,
-    rgba(0,0,0,0.50)  40%,
-    rgba(0,0,0,0.12)  65%,
-    transparent       100%
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.12) 65%,
+    transparent 100%
   );
   pointer-events: none;
 }
@@ -228,6 +230,6 @@
   font-size: 16px;
   font-weight: var(--weight-regular);
   line-height: 1.6;
-  color: rgba(255,255,255,0.80);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
 }

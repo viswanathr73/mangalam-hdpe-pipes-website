@@ -46,11 +46,15 @@
 }
 /* Light variant for dark section backgrounds */
 .section-tag--light {
-  background: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
 }
-.section-header--light h2  { color: var(--clr-white); }
-.section-header--light .section-sub { color: rgba(255,255,255,0.55); }
+.section-header--light h2 {
+  color: var(--clr-white);
+}
+.section-header--light .section-sub {
+  color: rgba(255, 255, 255, 0.55);
+}
 
 /* ── Divider ─────────────────────────────────────────── */
 .divider {

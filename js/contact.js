@@ -82,8 +82,8 @@
       e.preventDefault();
       var valid = true;
 
-      var nameInput  = document.getElementById('cf-fullname');
-      var compInput  = document.getElementById('cf-company');
+      var nameInput = document.getElementById('cf-fullname');
+      var compInput = document.getElementById('cf-company');
       var emailInput = document.getElementById('cf-email');
       var phoneInput = document.getElementById('cf-phone');
 

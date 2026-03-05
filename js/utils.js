@@ -8,7 +8,7 @@
 /* ── DOM helpers ─────────────────────────────────────── */
 
 /** Select one element */
-const qs  = (sel, ctx = document) => ctx.querySelector(sel);
+const qs = (sel, ctx = document) => ctx.querySelector(sel);
 
 /** Select all elements → Array */
 const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
@@ -19,10 +19,10 @@ const on = (el, event, handler, opts = {}) => {
 };
 
 /* ── Class helpers ───────────────────────────────────── */
-const addClass    = (el, ...cls) => el?.classList.add(...cls);
+const addClass = (el, ...cls) => el?.classList.add(...cls);
 const removeClass = (el, ...cls) => el?.classList.remove(...cls);
 const toggleClass = (el, cls, force) => el?.classList.toggle(cls, force);
-const hasClass    = (el, cls) => el?.classList.contains(cls) ?? false;
+const hasClass = (el, cls) => el?.classList.contains(cls) ?? false;
 
 /* ── RAF throttle ────────────────────────────────────── */
 /**
@@ -62,7 +62,7 @@ function scrollToEl(el, offset = 0) {
 }
 
 /* ── Lock / unlock body scroll ───────────────────────── */
-function lockScroll()   { document.body.style.overflow = 'hidden'; }
+function lockScroll() { document.body.style.overflow = 'hidden'; }
 function unlockScroll() { document.body.style.overflow = ''; }
 
 /* ── Export to window for cross-file access ─────────── */

@@ -4,35 +4,35 @@
    Desktop + responsive in one file (section is simple).
 
    Tailwind → CSS map:
-   ┌────────────────────────────────────────────────────────┐
-   │ bg-white  p-[100px]                                    │
-   │ Inner: flex-col  items-center  gap-14=56px             │
-   │                                                        │
-   │ HEADING: centered                                      │
-   │  H2:  44px  Urbanist Bold  #0D0D0D                     │
-   │  Sub: 18px  regular        #4D545C                     │
-   │  gap-5=20px between                                    │
-   │                                                        │
-   │ CARDS ROW: flex  gap-6=24px  self-stretch              │
-   │  3 equal cards (flex: 1 1 0)                           │
-   │                                                        │
-   │ CARD: bg-white  rounded-[20px]  border-1.25px #CFD1D4  │
-   │  Inner: flex-col  justify-between  p-6=24px            │
-   │  TOP:  title 28px semibold #0D0D0D                     │
-   │        desc  16px regular  #4D545C                     │
-   │        gap-4=16px                                      │
-   │  BOTTOM: flex-col  gap-5=20px                          │
-   │   image: h-175px  object-cover  w-full  r-8px          │
-   │   btn: bg #2B3990  px-6=24px  py-2.5=10px  r-xl=12px  │
-   │        text: white (screenshot overrides Tailwind)     │
-   │                                                        │
-   │ BOTTOM CTA BAR                                         │
-   │  bg-white  p-5=20px  r-[10px]  border #CFD1D4          │
-   │  flex  justify-between  items-center                   │
-   │  Left: title 26px semibold + sub 16px                  │
-   │  Right: btn h-44px  bg #2B3990  px-4=16px  r-[10px]   │
-   │         phone icon 20×20px + "Talk to an Expert"       │
-   └────────────────────────────────────────────────────────┘
+   
+    bg-white  p-[100px]                                    
+    Inner: flex-col  items-center  gap-14=56px             
+                                                           
+    HEADING: centered                                      
+     H2:  44px  Urbanist Bold  #0D0D0D                     
+     Sub: 18px  regular        #4D545C                     
+     gap-5=20px between                                    
+                                                         
+    CARDS ROW: flex  gap-6=24px  self-stretch              
+     3 equal cards (flex: 1 1 0)                           
+                                                          
+    CARD: bg-white  rounded-[20px]  border-1.25px #CFD1D4  
+     Inner: flex-col  justify-between  p-6=24px            
+     TOP:  title 28px semibold #0D0D0D                     
+          desc  16px regular  #4D545C                    
+           gap-4=16px                                      
+     BOTTOM: flex-col  gap-5=20px                          
+      image: h-175px  object-cover  w-full  r-8px          
+      btn: bg #2B3990  px-6=24px  py-2.5=10px  r-xl=12px  
+           text: white (screenshot overrides Tailwind)     
+                                                           
+    BOTTOM CTA BAR                                         
+     bg-white  p-5=20px  r-[10px]  border #CFD1D4          
+     flex  justify-between  items-center                   
+     Left: title 26px semibold + sub 16px                  
+     Right: btn h-44px  bg #2B3990  px-4=16px  r-[10px]   
+            phone icon 20×20px + "Talk to an Expert"       
+  
 ============================================================ */
 
 /* ── Section ─────────────────────────────────────────── */
@@ -64,14 +64,14 @@
   font-size: 44px;
   font-weight: var(--weight-bold);
   line-height: 1.1;
-  color: #0D0D0D;
+  color: #0d0d0d;
 }
 
 .portfolio-heading__sub {
   font-size: 18px;
   font-weight: var(--weight-regular);
   line-height: 1.6;
-  color: #4D545C;
+  color: #4d545c;
   max-width: 600px;
   margin: 0;
 }
@@ -79,7 +79,7 @@
 /* ── Cards row: 3 equal columns ─────────────────────── */
 .portfolio-cards {
   display: flex;
-  gap: 24px;                 /* gap-6 */
+  gap: 24px; /* gap-6 */
   width: 120%;
 }
 
@@ -91,12 +91,12 @@
   flex-direction: column;
   background: var(--clr-white);
   border-radius: 20px;
-  border: 1.25px solid #CFD1D4;
+  border: 1.25px solid #cfd1d4;
   overflow: hidden;
   transition:
     border-color var(--transition-base),
-    box-shadow   var(--transition-base),
-    transform    var(--transition-base);
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 .portfolio-card:hover {
   border-color: var(--clr-primary);
@@ -110,15 +110,15 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  padding: 24px;             /* p-6 */
-  gap: 20px;                 /* gap-5 between top-block and bottom-block */
+  padding: 24px; /* p-6 */
+  gap: 20px; /* gap-5 between top-block and bottom-block */
 }
 
 /* ── Top block: title + desc ─────────────────────────── */
 .portfolio-card__top {
   display: flex;
   flex-direction: column;
-  gap: 16px;                 /* gap-4 */
+  gap: 16px; /* gap-4 */
 }
 
 .portfolio-card__title {
@@ -126,7 +126,7 @@
   font-size: 28px;
   font-weight: var(--weight-semibold);
   line-height: 1.2;
-  color: #0D0D0D;
+  color: #0d0d0d;
   margin: 0;
 }
 
@@ -134,7 +134,7 @@
   font-size: 16px;
   font-weight: var(--weight-regular);
   line-height: 1.6;
-  color: #4D545C;
+  color: #4d545c;
   margin: 0;
 }
 
@@ -142,7 +142,7 @@
 .portfolio-card__bottom {
   display: flex;
   flex-direction: column;
-  gap: 20px;                 /* gap-5 */
+  gap: 20px; /* gap-5 */
 }
 
 /* Product image: h-175px, full width, cover */
@@ -152,7 +152,7 @@
   object-fit: cover;
   border-radius: 8px;
   display: block;
-  background: var(--clr-gray-100);   /* placeholder bg */
+  background: var(--clr-gray-100); /* placeholder bg */
 }
 
 /* "Learn More" button: full width, blue fill, white text */
@@ -163,8 +163,8 @@
   justify-content: center;
   gap: 4px;
   width: 100%;
-  padding: 10px 24px;        /* py-2.5 px-6 */
-  border-radius: 12px;       /* rounded-xl */
+  padding: 10px 24px; /* py-2.5 px-6 */
+  border-radius: 12px; /* rounded-xl */
   background: var(--clr-primary);
   border: 1px solid var(--clr-primary);
   color: var(--clr-white);
@@ -175,15 +175,17 @@
   text-decoration: none;
   transition:
     background var(--transition-base),
-    box-shadow  var(--transition-base),
-    transform   var(--transition-base);
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 .portfolio-card__btn:hover {
   background: var(--clr-primary-dark);
   box-shadow: var(--shadow-primary);
   transform: translateY(-1px);
 }
-.portfolio-card__btn:active { transform: scale(0.98); }
+.portfolio-card__btn:active {
+  transform: scale(0.98);
+}
 
 /* ══════════════════════════════════════════════════════
    BOTTOM CTA BAR
@@ -200,7 +202,7 @@
   gap: 24px;
   width: 100%;
   background: var(--clr-white);
-  border: 1px solid #CFD1D4;
+  border: 1px solid #cfd1d4;
   border-radius: 10px;
   padding: 20px;
 }
@@ -216,7 +218,7 @@
   font-size: 26px;
   font-weight: var(--weight-semibold);
   line-height: 1.2;
-  color: #0D0D0D;
+  color: #0d0d0d;
 }
 
 /* "looking for?" — highlighted in screenshot with blue underline */
@@ -231,7 +233,7 @@
 .portfolio-cta-bar__sub {
   font-size: 16px;
   font-weight: var(--weight-regular);
-  color: rgba(38, 42, 46, 0.80);
+  color: rgba(38, 42, 46, 0.8);
   margin: 0;
   line-height: 1.5;
 }
@@ -243,7 +245,7 @@
   justify-content: center;
   gap: 8px;
   height: 44px;
-  padding: 0 16px;           /* px-4 */
+  padding: 0 16px; /* px-4 */
   border-radius: 10px;
   background: var(--clr-primary);
   border: none;
@@ -256,15 +258,17 @@
   flex-shrink: 0;
   transition:
     background var(--transition-base),
-    box-shadow  var(--transition-base),
-    transform   var(--transition-base);
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 .portfolio-cta-bar__btn:hover {
   background: var(--clr-primary-dark);
   box-shadow: var(--shadow-primary);
   transform: translateY(-1px);
 }
-.portfolio-cta-bar__btn:active { transform: scale(0.98); }
+.portfolio-cta-bar__btn:active {
+  transform: scale(0.98);
+}
 
 .portfolio-cta-bar__btn svg {
   width: 20px;
@@ -276,32 +280,67 @@
 
 /* ≤1080px */
 @media (max-width: 1080px) {
-  .portfolio-section         { padding: 80px var(--container-px); }
-  .portfolio-heading__title  { font-size: 36px; }
-  .portfolio-card__title     { font-size: 24px; }
-  .portfolio-cta-bar__title  { font-size: 22px; }
+  .portfolio-section {
+    padding: 80px var(--container-px);
+  }
+  .portfolio-heading__title {
+    font-size: 36px;
+  }
+  .portfolio-card__title {
+    font-size: 24px;
+  }
+  .portfolio-cta-bar__title {
+    font-size: 22px;
+  }
 }
 
 /* ≤800px: 2 cards per row, 3rd wraps below */
 @media (max-width: 800px) {
-  .portfolio-section         { padding: 60px var(--container-px); }
-  .portfolio-heading__title  { font-size: 28px; }
-  .portfolio-cards           { flex-wrap: wrap; }
-  .portfolio-card            { flex: 0 0 calc(50% - 12px); }
-  .portfolio-cta-bar         { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .portfolio-cta-bar__btn    { width: 100%; justify-content: center; }
+  .portfolio-section {
+    padding: 60px var(--container-px);
+  }
+  .portfolio-heading__title {
+    font-size: 28px;
+  }
+  .portfolio-cards {
+    flex-wrap: wrap;
+  }
+  .portfolio-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+  .portfolio-cta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .portfolio-cta-bar__btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ≤480px: 1 card per row */
 @media (max-width: 480px) {
-  .portfolio-heading__title  { font-size: 24px; }
-  .portfolio-card            { flex: 0 0 100%; }
-  .portfolio-cta-bar__title  { font-size: 20px; }
+  .portfolio-heading__title {
+    font-size: 24px;
+  }
+  .portfolio-card {
+    flex: 0 0 100%;
+  }
+  .portfolio-cta-bar__title {
+    font-size: 20px;
+  }
 }
 
 /* ≤360px */
 @media (max-width: 360px) {
-  .portfolio-section         { padding: 48px var(--container-px); }
-  .portfolio-heading__title  { font-size: 22px; }
-  .portfolio-card__title     { font-size: 20px; }
+  .portfolio-section {
+    padding: 48px var(--container-px);
+  }
+  .portfolio-heading__title {
+    font-size: 22px;
+  }
+  .portfolio-card__title {
+    font-size: 20px;
+  }
 }

@@ -25,7 +25,7 @@
 function initProcess() {
   const { qs, on, debounce, clamp } = window.MG;
 
-  const track   = qs('.process-track');
+  const track = qs('.process-track');
   const prevBtn = qs('.process-nav__btn--prev');
   const nextBtn = qs('.process-nav__btn--next');
   if (!track || !prevBtn || !nextBtn) return;
@@ -43,8 +43,8 @@ function initProcess() {
   function visibleCount() {
     /* How many full cards fit in the carousel viewport */
     const viewport = qs('.process-carousel')?.offsetWidth || window.innerWidth;
-    const card     = track.querySelector('.process-card')?.offsetWidth || 420;
-    const gap      = parseInt(getComputedStyle(track).gap) || 16;
+    const card = track.querySelector('.process-card')?.offsetWidth || 420;
+    const gap = parseInt(getComputedStyle(track).gap) || 16;
     return Math.max(1, Math.floor((viewport + gap) / (card + gap)));
   }
 
@@ -54,7 +54,7 @@ function initProcess() {
 
   function maxIndex() {
     /* Stop when last card's right edge aligns with viewport right */
-    const total   = totalCards();
+    const total = totalCards();
     const visible = visibleCount();
     return Math.max(0, total - visible);
   }
@@ -76,11 +76,11 @@ function initProcess() {
   on(nextBtn, 'click', () => goTo(index + 1));
 
   /* ── Touch + drag ─────────────────────────────────── */
-  let startX   = null;
+  let startX = null;
   let dragging = false;
 
   function onDragStart(x) { startX = x; dragging = false; }
-  function onDragMove(x)  { if (Math.abs(x - startX) > 5) dragging = true; }
+  function onDragMove(x) { if (Math.abs(x - startX) > 5) dragging = true; }
   function onDragEnd(x) {
     if (startX === null) return;
     const diff = startX - x;
@@ -88,15 +88,15 @@ function initProcess() {
     startX = null;
   }
 
-  on(track, 'mousedown',  e => onDragStart(e.clientX));
-  on(track, 'mousemove',  e => { if (startX !== null) onDragMove(e.clientX); });
-  on(track, 'mouseup',    e => onDragEnd(e.clientX));
+  on(track, 'mousedown', e => onDragStart(e.clientX));
+  on(track, 'mousemove', e => { if (startX !== null) onDragMove(e.clientX); });
+  on(track, 'mouseup', e => onDragEnd(e.clientX));
   on(track, 'mouseleave', e => { if (startX !== null) onDragEnd(e.clientX); });
-  on(track, 'click',      e => { if (dragging) e.preventDefault(); });
+  on(track, 'click', e => { if (dragging) e.preventDefault(); });
 
-  on(track, 'touchstart', e => onDragStart(e.touches[0].clientX),        { passive: true });
-  on(track, 'touchmove',  e => onDragMove(e.touches[0].clientX),         { passive: true });
-  on(track, 'touchend',   e => onDragEnd(e.changedTouches[0].clientX));
+  on(track, 'touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+  on(track, 'touchmove', e => onDragMove(e.touches[0].clientX), { passive: true });
+  on(track, 'touchend', e => onDragEnd(e.changedTouches[0].clientX));
 
   /* ── Reset on resize ──────────────────────────────── */
   window.addEventListener('resize', debounce(() => {

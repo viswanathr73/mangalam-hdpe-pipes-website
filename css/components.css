@@ -26,13 +26,26 @@
   border: 1.5px solid transparent;
   line-height: 1;
 }
-.btn:active { transform: scale(0.98); }
+.btn:active {
+  transform: scale(0.98);
+}
 
 /* Size variants */
-.btn--lg  { padding: 14px 28px; font-size: var(--text-base); }
-.btn--md  { padding: 12px 22px; font-size: var(--text-sm); }
-.btn--sm  { padding: 9px 18px;  font-size: var(--text-xs); }
-.btn--full { width: 100%; }
+.btn--lg {
+  padding: 14px 28px;
+  font-size: var(--text-base);
+}
+.btn--md {
+  padding: 12px 22px;
+  font-size: var(--text-sm);
+}
+.btn--sm {
+  padding: 9px 18px;
+  font-size: var(--text-xs);
+}
+.btn--full {
+  width: 100%;
+}
 
 /* Primary — filled blue */
 .btn--primary {
@@ -99,17 +112,17 @@
   color: var(--clr-primary);
 }
 .badge--green {
-  background: #DCFCE7;
-  color: #15803D;
+  background: #dcfce7;
+  color: #15803d;
 }
 .badge--red {
-  background: #FEE2E2;
-  color: #B91C1C;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 /* ── Stars ───────────────────────────────────────────── */
 .stars {
-  color: #F59E0B;
+  color: #f59e0b;
   font-size: var(--text-md);
   letter-spacing: 2px;
   line-height: 1;
@@ -139,11 +152,25 @@
   border-radius: var(--radius-md);
   flex-shrink: 0;
 }
-.icon-box--sm   { width: 36px; height: 36px; }
-.icon-box--md   { width: 46px; height: 46px; }
-.icon-box--lg   { width: 56px; height: 56px; }
-.icon-box--blue { background: var(--clr-primary-light); }
-.icon-box--dark { background: rgba(43,57,144,0.4); border: 1px solid rgba(43,57,144,0.7); }
+.icon-box--sm {
+  width: 36px;
+  height: 36px;
+}
+.icon-box--md {
+  width: 46px;
+  height: 46px;
+}
+.icon-box--lg {
+  width: 56px;
+  height: 56px;
+}
+.icon-box--blue {
+  background: var(--clr-primary-light);
+}
+.icon-box--dark {
+  background: rgba(43, 57, 144, 0.4);
+  border: 1px solid rgba(43, 57, 144, 0.7);
+}
 
 /* ── Carousel dots ───────────────────────────────────── */
 .carousel-dots {

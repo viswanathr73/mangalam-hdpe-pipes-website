@@ -34,8 +34,9 @@
 
 /* ── ≤768px — table switches to stacked rows ─────────── */
 @media (max-width: 768px) {
-
-  .specs-heading__title { font-size: 30px; }
+  .specs-heading__title {
+    font-size: 30px;
+  }
 
   /* Break the side-by-side columns into stacked rows */
   .specs-table-wrap {
@@ -100,8 +101,12 @@
 
 /* ── ≤480px ───────────────────────────────────────────── */
 @media (max-width: 480px) {
-  .specs-heading__title { font-size: 26px; }
-  .specs-heading__sub   { font-size: 15px; }
+  .specs-heading__title {
+    font-size: 26px;
+  }
+  .specs-heading__sub {
+    font-size: 15px;
+  }
 
   .specs-download-btn {
     width: 100%;
@@ -111,5 +116,7 @@
 
 /* ── ≤360px ───────────────────────────────────────────── */
 @media (max-width: 360px) {
-  .specs-heading__title { font-size: 22px; }
+  .specs-heading__title {
+    font-size: 22px;
+  }
 }
